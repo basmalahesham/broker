@@ -1,5 +1,6 @@
 import 'package:broker/features/splash/presentation/views/splash_view1.dart';
 import 'package:broker/features/splash/presentation/views/splash_view2.dart';
+import 'package:broker/layout/home_layout.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashView1.routeName: (context) => SplashView1(),
         SplashView2.routeName : (context) => SplashView2(),
+        HomeLayout.routeName : (context) => HomeLayout(),
       },
     );
   }
