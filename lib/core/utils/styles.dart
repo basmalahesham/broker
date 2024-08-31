@@ -6,27 +6,22 @@ abstract class Styles {
     fontSize: 18,
     fontWeight: FontWeight.w600,
     fontFamily: kFontFamily,
-
   );
   static const textStyle20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
     fontFamily: kFontFamily,
-
   );
   static const textStyle11 = TextStyle(
-
     fontSize: 11,
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
-
   );
 
   static const textStyle16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
-
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,

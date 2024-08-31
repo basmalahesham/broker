@@ -1,3 +1,4 @@
+import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -5,6 +6,12 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      children: [
+        CustomAppBarHomeView(),
+
+      ],
+    );
   }
 }
+
