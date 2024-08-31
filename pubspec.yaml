@@ -76,7 +76,7 @@ flutter:
   fonts:
     - family: DIN Next LT W23
       fonts:
-        - asset: assets/fonts/din-next-lt-w23-regular.ttf
+        - asset: assets/fonts/alfont_com_AlFont_com_DIN-NEXT™-ARABIC-BOLD.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
