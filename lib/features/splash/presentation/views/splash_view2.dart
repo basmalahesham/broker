@@ -1,3 +1,4 @@
+import 'package:broker/constants.dart';
 import 'package:broker/layout/home_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,24 @@ class SplashView2 extends StatelessWidget {
         HomeLayout.routeName,
       ),
     );
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/Splash 2.png'),
-          fit: BoxFit.fill,
-        ),
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset('assets/images/png-01.png'),
+          const Align(
+            alignment: Alignment.topCenter,
+            child: Text(
+              'جد منزل احلامك بسهولة',
+              style: TextStyle(
+                fontFamily: kFontFamily,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFEA4335),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

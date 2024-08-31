@@ -31,7 +31,7 @@ class SplashView1 extends StatelessWidget {
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, 1.0); // Slide from bottom
         const end = Offset.zero;
-        const curve = Curves.easeInOut;
+        const curve = Curves.easeIn;
 
         final tween =
             Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
