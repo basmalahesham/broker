@@ -1,7 +1,7 @@
 import 'package:broker/constants.dart';
+import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/splash/presentation/views/splash_view1.dart';
 import 'package:broker/features/splash/presentation/views/splash_view2.dart';
-import 'package:broker/layout/home_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

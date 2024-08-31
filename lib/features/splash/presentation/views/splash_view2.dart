@@ -1,5 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
-import 'package:broker/layout/home_layout.dart';
+import 'package:broker/features/layout/home_layout.dart';
 import 'package:flutter/material.dart';
 
 class SplashView2 extends StatelessWidget {
