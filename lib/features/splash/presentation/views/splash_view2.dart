@@ -1,3 +1,4 @@
+import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class SplashView2 extends StatelessWidget {
             child: Text(
               'جد منزل احلامك بسهولة',
               style: Styles.textStyle20.copyWith(
-                color: const Color(0xFFEA4335),
+                color: kSecondaryColor,
               ),
             ),
           ),
