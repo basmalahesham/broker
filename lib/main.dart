@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        const Locale('en'),
-        const Locale('ar'),
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
       ],
       locale: const Locale('ar'),
       theme: ThemeData.light().copyWith(
@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: SplashView1.routeName,
       routes: {
-        SplashView1.routeName: (context) => SplashView1(),
-        SplashView2.routeName: (context) => SplashView2(),
+        SplashView1.routeName: (context) => const SplashView1(),
+        SplashView2.routeName: (context) => const SplashView2(),
         HomeLayout.routeName: (context) => HomeLayout(),
       },
     );

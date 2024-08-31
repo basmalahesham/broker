@@ -1,4 +1,4 @@
-import 'package:broker/constants.dart';
+import 'package:broker/core/utils/styles.dart';
 import 'package:broker/layout/home_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -19,15 +19,12 @@ class SplashView2 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset('assets/images/png-01.png'),
-          const Align(
+          Align(
             alignment: Alignment.topCenter,
             child: Text(
               'جد منزل احلامك بسهولة',
-              style: TextStyle(
-                fontFamily: kFontFamily,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFFEA4335),
+              style: Styles.textStyle20.copyWith(
+                color: const Color(0xFFEA4335),
               ),
             ),
           ),

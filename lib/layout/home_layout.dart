@@ -1,8 +1,8 @@
-import 'package:broker/constants.dart';
+import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeLayout extends StatefulWidget {
-  HomeLayout({super.key});
+  const HomeLayout({super.key});
 
   static const String routeName = "home_view";
 
@@ -26,7 +26,7 @@ class _HomeLayoutState extends State<HomeLayout> {
             selectedIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: ImageIcon(
               AssetImage('assets/images/home.png'),
@@ -58,18 +58,18 @@ class _HomeLayoutState extends State<HomeLayout> {
             label: 'الرسائل',
           ),
         ],
-        selectedLabelStyle: TextStyle(
+        showUnselectedLabels: true,
+        selectedLabelStyle: Styles.textStyle11.copyWith(
           color: Colors.red,
-          fontWeight: FontWeight.w500,
-          fontSize: 11,
         ),
-        unselectedLabelStyle: TextStyle(
-          color: Colors.black,
+        unselectedLabelStyle: Styles.textStyle11.copyWith(
+          color: Colors.black.withOpacity(0.7),
         ),
         selectedItemColor: Colors.red,
         unselectedItemColor: Colors.black,
-        selectedIconTheme: IconThemeData(color: Colors.red),
-        unselectedIconTheme: IconThemeData(color: Colors.black),
+        selectedIconTheme: const IconThemeData(color: Colors.red),
+        unselectedIconTheme:
+            IconThemeData(color: Colors.black.withOpacity(0.7)),
       ),
     );
   }
