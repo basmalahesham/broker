@@ -3,6 +3,7 @@ import 'package:broker/features/splash/presentation/views/splash_view1.dart';
 import 'package:broker/features/splash/presentation/views/splash_view2.dart';
 import 'package:broker/layout/home_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +12,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en'),
+        const Locale('ar'),
+      ],
+      locale: const Locale('ar'),
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
       ),
