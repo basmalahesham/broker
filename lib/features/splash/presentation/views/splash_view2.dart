@@ -8,19 +8,15 @@ class SplashView2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(
-      const Duration(
-        seconds: 3,
-      ),
-          () => Navigator.of(context).pushReplacementNamed(
+      const Duration(seconds: 2),
+      () => Navigator.of(context).pushReplacementNamed(
         HomeLayout.routeName,
       ),
     );
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            'assets/images/Splash 2.png',
-          ),
+          image: AssetImage('assets/images/Splash 2.png'),
           fit: BoxFit.fill,
         ),
       ),
