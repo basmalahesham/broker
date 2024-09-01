@@ -1,6 +1,7 @@
 import 'package:broker/features/home/data/models/model.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomListView extends StatelessWidget {
   CustomListView({super.key});
@@ -16,7 +17,7 @@ class CustomListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 16.0),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * .16,
+        height: 119.h,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
@@ -24,12 +25,13 @@ class CustomListView extends StatelessWidget {
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: CustomImage(
+              height: 119.h,
+              width: 108.w,
               model: list[index],
             ),
           ),
         ),
       ),
     );
-    ;
   }
 }

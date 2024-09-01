@@ -1,36 +1,32 @@
 import 'package:broker/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class Styles {
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
+  static TextStyle textStyle20 = TextStyle(
+    fontSize: 20.sp,
     fontWeight: FontWeight.bold,
     fontFamily: kFontFamily,
   );
-  static const textStyle10 = TextStyle(
-    fontSize: 10,
+  static TextStyle textStyle10 = TextStyle(
+    fontSize: 10.sp,
     fontWeight: FontWeight.normal,
     fontFamily: kFontFamily,
   );
-  static const textStyle11 = TextStyle(
-    fontSize: 11,
+  static TextStyle textStyle11 = TextStyle(
+    fontSize: 11.sp,
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
 
-  static const textStyle14 = TextStyle(
-    fontSize: 14,
+  static TextStyle textStyle14 = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
-  static const textStyle16 = TextStyle(
-    fontSize: 16,
+  static TextStyle textStyle16 = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.w500,
-    fontFamily: kFontFamily,
-  );
-  static const textStyle30 = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.normal,
     fontFamily: kFontFamily,
   );
 }

@@ -2,6 +2,7 @@ import 'package:broker/constants.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
   const CustomCarouselSlider({super.key});
@@ -38,7 +39,8 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
           ),
           items: items.map((item) {
             return SizedBox(
-              width: MediaQuery.of(context).size.width,
+              width: 375.w,
+              height: 200.h,
               child: item,
             );
           }).toList(),
@@ -48,10 +50,10 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
           child: DotsIndicator(
             dotsCount: items.length,
             position: currentIndex,
-            decorator: const DotsDecorator(
+            decorator:  DotsDecorator(
               activeColor: kSecondaryColor,
               color: Colors.grey,
-              size: Size(10, 10),
+              size: Size(10.w, 10.h),
             ),
           ),
         ),

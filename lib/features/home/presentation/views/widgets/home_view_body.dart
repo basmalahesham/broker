@@ -3,7 +3,6 @@ import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_h
 import 'package:broker/features/home/presentation/views/widgets/custom_card.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_carousel_slider.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_grid_view.dart';
-import 'package:broker/features/home/presentation/views/widgets/custom_image.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_list_view.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_row.dart';
 import 'package:flutter/material.dart';
@@ -16,20 +15,20 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBarHomeView(),
-              CustomCarouselSlider(),
-              CustomCard(),
-              CustomRow(
+              const CustomAppBarHomeView(),
+              const CustomCarouselSlider(),
+              const CustomCard(),
+              const CustomRow(
                 text: 'الاعلانات الاكثر تفاعلا',
               ),
               CustomListView(),
-              CustomRow(
+              const CustomRow(
                 text: 'عقارات المملكة',
               ),
               CustomListView(),
@@ -40,6 +39,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
+        CustomGridView(),
       ],
     );
   }

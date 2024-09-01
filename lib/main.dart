@@ -2,11 +2,20 @@ import 'package:broker/constants.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/splash/presentation/views/splash_view1.dart';
 import 'package:broker/features/splash/presentation/views/splash_view2.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ScreenUtilInit(
+    builder: (child, context) => DevicePreview(
+      enabled: false,
+      builder: (context) => const MyApp(),
+    ),
+    minTextAdapt: true,
+    splitScreenMode: true,
+  ),);
 }
 
 class MyApp extends StatelessWidget {

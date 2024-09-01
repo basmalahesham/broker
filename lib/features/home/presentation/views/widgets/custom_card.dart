@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCard extends StatefulWidget {
   const CustomCard({super.key});
@@ -60,7 +61,7 @@ class _CustomCardState extends State<CustomCard> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  SizedBox(width: 8.w),
                   InkWell(
                     onTap: () {
                       setState(() {
@@ -76,7 +77,7 @@ class _CustomCardState extends State<CustomCard> {
                             color: activeButtonIndex == 1
                                 ? Colors.white
                                 : kSecondaryColor,
-                            width: 1.0,
+                            width: 1.0.w,
                           ),
                         ),
                       ),
@@ -98,7 +99,8 @@ class _CustomCardState extends State<CustomCard> {
                   margin: const EdgeInsets.only(top: 20),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                  height: 50,
+                  width: 311.w,
+                  height: 40.h,
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
                       Radius.circular(9),
@@ -131,7 +133,8 @@ class _CustomCardState extends State<CustomCard> {
                   margin: const EdgeInsets.only(top: 20),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                  height: 50,
+                  width: 311.w,
+                  height: 40.h,
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
                       Radius.circular(9),
@@ -159,11 +162,11 @@ class _CustomCardState extends State<CustomCard> {
                 ),
               ),
               SizedBox(
-                height: 16,
+                height: 16.h,
               ),
               SizedBox(
-                width: 315,
-                height: 45,
+                width: 311.w,
+                height: 40.h,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: kSecondaryColor,

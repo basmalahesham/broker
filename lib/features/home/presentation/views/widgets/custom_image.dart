@@ -3,14 +3,16 @@ import 'package:broker/features/home/data/models/model.dart';
 import 'package:flutter/material.dart';
 
 class CustomImage extends StatelessWidget {
-  const CustomImage({super.key, required this.model});
+  const CustomImage({super.key, required this.model, required this.height, required this.width});
 
   final Model model;
+  final double height;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 119,
-      width: 108,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
         image: DecorationImage(
