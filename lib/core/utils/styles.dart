@@ -18,6 +18,11 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
+  static TextStyle textStyle12 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: kFontFamily,
+  );
 
   static TextStyle textStyle14 = TextStyle(
     fontSize: 14.sp,

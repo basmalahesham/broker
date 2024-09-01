@@ -3,7 +3,9 @@ import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_h
 import 'package:broker/features/home/presentation/views/widgets/custom_card.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_carousel_slider.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_grid_view.dart';
-import 'package:broker/features/home/presentation/views/widgets/custom_list_view.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_list_view_aqar_mmlka.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_list_view_most_interactive_ads.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_list_view_special_aqar.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_row.dart';
 import 'package:flutter/material.dart';
 
@@ -27,11 +29,11 @@ class HomeViewBody extends StatelessWidget {
               const CustomRow(
                 text: 'الاعلانات الاكثر تفاعلا',
               ),
-              CustomListView(),
+              CustomListViewMostInteractiveAds(),
               const CustomRow(
                 text: 'عقارات المملكة',
               ),
-              CustomListView(),
+              CustomListViewAqarMmlka(),
               Padding(
                 padding: const EdgeInsets.only(right: 16.0,bottom: 16,top: 24),
                 child: Text('خدماتنا',style: Styles.textStyle16,),
@@ -40,6 +42,14 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         CustomGridView(),
+        SliverToBoxAdapter(child: Column(
+          children: [
+            const CustomRow(
+              text: 'عقارات مميزة',
+            ),
+            CustomListViewSpecialAqar(),
+          ],
+        ),)
       ],
     );
   }

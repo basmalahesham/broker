@@ -3,8 +3,8 @@ import 'package:broker/features/home/presentation/views/widgets/custom_image.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomListView extends StatelessWidget {
-  CustomListView({super.key});
+class CustomListViewAqarMmlka extends StatelessWidget {
+  CustomListViewAqarMmlka({super.key});
   final List<Model> list = [
     Model(image: 'assets/images/Frame 1171275246.png', title: 'الرياض'),
     Model(image: 'assets/images/Frame 1171275247.png', title: 'مكة'),
@@ -15,7 +15,7 @@ class CustomListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16.0),
+      padding: const EdgeInsets.only(right: 8.0),
       child: SizedBox(
         height: 119.h,
         child: ListView.builder(

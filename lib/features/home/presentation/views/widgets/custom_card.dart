@@ -18,7 +18,7 @@ class _CustomCardState extends State<CustomCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.only(left: 16.0, right: 16, top: 16.0, bottom: 24.0),
+          const EdgeInsets.only(left: 16.0, right: 16, top: 16.0,),
       child: Card(
         color: Colors.white,
         child: Padding(
