@@ -8,6 +8,11 @@ abstract class Styles {
     fontWeight: FontWeight.bold,
     fontFamily: kFontFamily,
   );
+  static TextStyle textStyle8 = TextStyle(
+    fontSize: 8.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: kFontFamily,
+  );
   static TextStyle textStyle10 = TextStyle(
     fontSize: 10.sp,
     fontWeight: FontWeight.normal,
