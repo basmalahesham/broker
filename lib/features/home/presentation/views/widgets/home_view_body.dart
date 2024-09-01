@@ -1,6 +1,11 @@
+import 'package:broker/core/utils/styles.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_card.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_carousel_slider.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_grid_view.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_image.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_list_view.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_row.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -10,11 +15,31 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
-        SliverToBoxAdapter(child: CustomAppBarHomeView()),
-        SliverToBoxAdapter(child: CustomCarouselSlider()),
-        SliverToBoxAdapter(child: CustomCard()),
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomAppBarHomeView(),
+              CustomCarouselSlider(),
+              CustomCard(),
+              CustomRow(
+                text: 'الاعلانات الاكثر تفاعلا',
+              ),
+              CustomListView(),
+              CustomRow(
+                text: 'عقارات المملكة',
+              ),
+              CustomListView(),
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0,bottom: 16,top: 24),
+                child: Text('خدماتنا',style: Styles.textStyle16,),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

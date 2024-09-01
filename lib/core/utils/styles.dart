@@ -7,6 +7,11 @@ abstract class Styles {
     fontWeight: FontWeight.bold,
     fontFamily: kFontFamily,
   );
+  static const textStyle10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.normal,
+    fontFamily: kFontFamily,
+  );
   static const textStyle11 = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w500,
@@ -15,6 +20,11 @@ abstract class Styles {
 
   static const textStyle14 = TextStyle(
     fontSize: 14,
+    fontWeight: FontWeight.w500,
+    fontFamily: kFontFamily,
+  );
+  static const textStyle16 = TextStyle(
+    fontSize: 16,
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
