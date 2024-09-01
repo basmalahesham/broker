@@ -1,3 +1,4 @@
+import 'package:broker/features/orders/presentation/views/widgets/order_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OrdersView extends StatelessWidget {
@@ -5,6 +6,7 @@ class OrdersView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('orders'));
+    return const OrderViewBody();
   }
 }
+
