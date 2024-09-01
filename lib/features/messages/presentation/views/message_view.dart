@@ -1,3 +1,4 @@
+import 'package:broker/features/messages/presentation/views/widgets/message_view_body.dart';
 import 'package:flutter/material.dart';
 
 class MessageView extends StatelessWidget {
@@ -5,6 +6,8 @@ class MessageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('message'));
+    return MessageViewBody();
   }
 }
+
+
