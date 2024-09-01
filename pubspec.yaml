@@ -83,6 +83,8 @@ flutter:
       fonts:
         - asset: assets/fonts/alfont_com_AlFont_com_DIN-NEXT™-ARABIC-BOLD.otf
         - asset: assets/fonts/alfont_com_AlFont_com_DIN-NEXT-LT-W23-MEDIUM.otf
+        - asset: assets/fonts/din-next-lt-w23-regular.ttf
+
 
   #
   # For details regarding fonts from package dependencies,

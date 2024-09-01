@@ -1,5 +1,4 @@
-import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
-import 'package:broker/features/home/presentation/views/widgets/custom_carousel_slider.dart';
+import 'package:broker/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -12,11 +11,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(child: CustomAppBarHomeView()),
-        SliverToBoxAdapter(child: CustomCarouselSlider()),
-      ],
-    );
+    return const HomeViewBody();
   }
 }
+
