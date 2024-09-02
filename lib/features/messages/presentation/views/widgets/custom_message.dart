@@ -1,5 +1,6 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/features/messages/presentation/views/archive_view.dart';
+import 'package:broker/features/messages/presentation/views/chat_view.dart';
 import 'package:broker/features/messages/presentation/views/widgets/custom_badge.dart';
 import 'package:broker/features/messages/presentation/views/widgets/custom_row_menu.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,10 @@ class CustomMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
+      onTap: (){
+        Navigator.pushNamed(context, ChatView.routeName);
+      },
+      onLongPress: () {
         showMenuFun(context);
       },
       child: Container(
