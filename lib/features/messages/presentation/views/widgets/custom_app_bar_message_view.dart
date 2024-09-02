@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/features/messages/presentation/views/archive_view.dart';
 import 'package:broker/features/messages/presentation/views/widgets/custom_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,7 +41,9 @@ class CustomAppBarMessageView extends StatelessWidget {
               height: 16.h,
             ),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.pushNamed(context, ArchiveView.routeName);
+              },
               child: Container(
                 width: 104.w,
                 height: 26.h,

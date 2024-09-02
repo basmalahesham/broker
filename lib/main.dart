@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/features/layout/home_layout.dart';
+import 'package:broker/features/messages/presentation/views/archive_view.dart';
 import 'package:broker/features/splash/presentation/views/splash_view1.dart';
 import 'package:broker/features/splash/presentation/views/splash_view2.dart';
 import 'package:device_preview/device_preview.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashView1.routeName: (context) => const SplashView1(),
         SplashView2.routeName: (context) => const SplashView2(),
-        HomeLayout.routeName: (context) => HomeLayout(),
+        HomeLayout.routeName: (context) => const HomeLayout(),
+        ArchiveView.routeName: (context) => const ArchiveView(),
       },
     );
   }

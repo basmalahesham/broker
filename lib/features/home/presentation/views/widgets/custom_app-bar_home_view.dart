@@ -10,7 +10,7 @@ class CustomAppBarHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         left: 16,
         right: 16,
         bottom: 16,
@@ -18,7 +18,7 @@ class CustomAppBarHomeView extends StatelessWidget {
       ),
       width: 375.w,
       height: 96.h,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFF332620),
       ),
       child: Row(

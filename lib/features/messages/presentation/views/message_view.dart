@@ -6,7 +6,7 @@ class MessageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MessageViewBody();
+    return const MessageViewBody();
   }
 }
 
