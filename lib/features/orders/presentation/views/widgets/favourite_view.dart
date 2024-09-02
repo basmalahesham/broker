@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,7 +41,9 @@ class FavouriteView extends StatelessWidget {
                       side: const BorderSide(color: Colors.red),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    showCustomBottomSheet(context);
+                  },
                   child: Text(
                     'أضف طلبك',
                     style: Styles.textStyle14.copyWith(
@@ -55,4 +58,11 @@ class FavouriteView extends StatelessWidget {
       ),
     );
   }
+  void showCustomBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => const CustomBottomSheet(),
+    );
+  }
+
 }

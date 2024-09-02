@@ -1,5 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
-import 'package:broker/features/add/presentation/views/add_view.dart';
+import 'package:broker/core/widgets/custom_bottom_sheet.dart';
 import 'package:broker/features/home/presentation/views/home_view.dart';
 import 'package:broker/features/map/presentation/views/map_view.dart';
 import 'package:broker/features/messages/presentation/views/message_view.dart';
@@ -21,7 +21,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<Widget> screenWidgets = [
     const HomeView(),
     const MapView(),
-    const AddView(),
+    Container(),
     const OrdersView(),
     const MessageView(),
   ];
@@ -33,9 +33,13 @@ class _HomeLayoutState extends State<HomeLayout> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          if (index == 2) {
+            showCustomBottomSheet();
+          } else {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
         },
         items: const [
           BottomNavigationBarItem(
@@ -74,4 +78,12 @@ class _HomeLayoutState extends State<HomeLayout> {
       ),
     );
   }
+
+  void showCustomBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => const CustomBottomSheet(),
+    );
+  }
 }
+
