@@ -17,6 +17,8 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int selectedIndex = 0;
+  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+
 
   List<Widget> screenWidgets = [
     const HomeView(),
@@ -29,12 +31,18 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _drawerKey,
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+      ),
       body: screenWidgets[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) {
           if (index == 2) {
             showCustomBottomSheet();
+          } else if (index == 5) {
+            _drawerKey.currentState?.openDrawer();
           } else {
             setState(() {
               selectedIndex = index;
@@ -62,6 +70,10 @@ class _HomeLayoutState extends State<HomeLayout> {
             icon: ImageIcon(AssetImage('assets/images/Message.png')),
             label: 'الرسائل',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'القائمة',
+          ),
         ],
         showUnselectedLabels: true,
         selectedLabelStyle: Styles.textStyle11.copyWith(
@@ -74,7 +86,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         unselectedItemColor: Colors.black,
         selectedIconTheme: const IconThemeData(color: Colors.red),
         unselectedIconTheme:
-            IconThemeData(color: Colors.black.withOpacity(0.7)),
+        IconThemeData(color: Colors.black.withOpacity(0.7)),
       ),
     );
   }
@@ -86,4 +98,3 @@ class _HomeLayoutState extends State<HomeLayout> {
     );
   }
 }
-
