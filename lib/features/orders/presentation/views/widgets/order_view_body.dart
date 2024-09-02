@@ -29,83 +29,94 @@ class _OrderViewBodyState extends State<OrderViewBody> {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'طلباتي',
-                  style: Styles.textStyle22,
-                ),
-                SizedBox(
-                  height: 16.h,
-                ),
-                SizedBox(
-                  height: 26.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: screenWidgets.length,
-                    itemBuilder: (context, index) => InkWell(
-                      onTap: () {
-                        if (index == 2) {
-                          showCustomBottomSheet();
-                        } else {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                        }
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 4.0),
-                        child: Container(
-                          width: 104.w,
-                          height: 26.h,
-                          decoration: BoxDecoration(
-                            color: selectedIndex == index
-                                ? kSecondaryColor
-                                : const Color(0xFFFEFEFE),
-                            borderRadius: BorderRadius.circular(23),
-                            border: Border.all(
-                              color: selectedIndex == index
-                                  ? Colors.transparent
-                                  : const Color(0xFFAFAFAF),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                index == 0
-                                    ? Icons.menu
-                                    : index == 1
-                                        ? Icons.favorite
-                                        : Icons.add_circle_outline,
-                                color: selectedIndex == index
-                                    ? Colors.white
-                                    : Colors.black,
-                              ),
-                              Text(
-                                index == 0
-                                    ? 'القائمة'
-                                    : index == 1
-                                        ? 'المفضلة'
-                                        : 'إضافة طلب',
-                                style: Styles.textStyle12.copyWith(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 375.w,
+                height: 108.h,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    //mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'طلباتي',
+                        style: Styles.textStyle22,
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      SizedBox(
+                        height: 26.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: screenWidgets.length,
+                          itemBuilder: (context, index) => InkWell(
+                            onTap: () {
+                              if (index == 2) {
+                                showCustomBottomSheet();
+                              } else {
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              }
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 4.0),
+                              child: Container(
+                                width: 104.w,
+                                height: 26.h,
+                                decoration: BoxDecoration(
                                   color: selectedIndex == index
-                                      ? Colors.white
-                                      : const Color(0xFF332620),
+                                      ? kSecondaryColor
+                                      : const Color(0xFFFEFEFE),
+                                  borderRadius: BorderRadius.circular(23),
+                                  border: Border.all(
+                                    color: selectedIndex == index
+                                        ? Colors.transparent
+                                        : const Color(0xFFAFAFAF),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      index == 0
+                                          ? Icons.menu
+                                          : index == 1
+                                          ? Icons.favorite
+                                          : Icons.add_circle_outline,
+                                      color: selectedIndex == index
+                                          ? Colors.white
+                                          : Colors.black,
+                                    ),
+                                    Text(
+                                      index == 0
+                                          ? 'القائمة'
+                                          : index == 1
+                                          ? 'المفضلة'
+                                          : 'إضافة طلب',
+                                      style: Styles.textStyle12.copyWith(
+                                        color: selectedIndex == index
+                                            ? Colors.white
+                                            : const Color(0xFF332620),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         screenWidgets[selectedIndex],
