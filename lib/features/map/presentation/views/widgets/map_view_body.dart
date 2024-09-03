@@ -60,10 +60,11 @@ class _MapViewBodyState extends State<MapViewBody> {
                 ),
                 Row(
                   children: [
+
                     Icon(
                       Icons.menu,
                       color: kSecondaryColor,
-                      size: 30,
+                      size: 25,
                     ),
                     SizedBox(
                       width: 20.w,

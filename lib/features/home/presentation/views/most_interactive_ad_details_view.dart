@@ -173,13 +173,10 @@ class MostInteractiveAdDetailsView extends StatelessWidget {
                       padding: const EdgeInsets.all(14.0),
                       child: Row(
                         children: [
-                          CircleAvatar(
-                            radius: 29,
-                            child: Image.asset(
-                              'assets/images/Ellipse 2.png',
-                              width: 56,
-                              height: 56,
-                            ),
+                          Image.asset(
+                            'assets/images/Ellipse 2.png',
+                            width: 40,
+                            height: 40,
                           ),
                           SizedBox(
                             width: 16.w,
@@ -379,7 +376,7 @@ class MostInteractiveAdDetailsView extends StatelessWidget {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

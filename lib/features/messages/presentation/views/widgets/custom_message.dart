@@ -33,14 +33,12 @@ class CustomMessage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: 12.0,
-            horizontal: 16,
+            horizontal: 12,
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                radius: 25,
-                child: Image.asset('assets/images/Ellipse 2.png'),
-              ),
+              Image.asset('assets/images/Ellipse 2.png',width: 40.w,height: 40.h,),
               SizedBox(
                 width: 8.w,
               ),
