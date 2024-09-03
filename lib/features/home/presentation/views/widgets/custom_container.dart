@@ -15,14 +15,14 @@ class CustomContainer extends StatelessWidget {
       width: 100.w,
       height: 75.h,
       decoration: BoxDecoration(
-        color: Color(0xFFF7F7F7),
+        color: const Color(0xFFF7F7F7),
         borderRadius: BorderRadius.circular(5),
         boxShadow: [
           BoxShadow(
-            color: Color(0xFF000000).withOpacity(0.15),
+            color: const Color(0xFF000000).withOpacity(0.15),
             spreadRadius: 0,
             blurRadius: 2,
-            offset: Offset(0, 1), // changes position of shadow
+            offset: const Offset(0, 1), // changes position of shadow
           ),
         ],
       ),
@@ -33,7 +33,7 @@ class CustomContainer extends StatelessWidget {
           Text(
             text,
             style: Styles.textStyle18.copyWith(
-              color: Color(0xFF332620B2).withOpacity(0.7),
+              color: const Color(0xFF332620).withOpacity(0.7),
             ),
           ),
         ],

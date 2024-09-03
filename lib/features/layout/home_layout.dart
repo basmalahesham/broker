@@ -1,6 +1,7 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_bottom_sheet.dart';
 import 'package:broker/features/home/presentation/views/home_view.dart';
+import 'package:broker/features/layout/widgets/custom_drawer.dart';
 import 'package:broker/features/map/presentation/views/map_view.dart';
 import 'package:broker/features/messages/presentation/views/message_view.dart';
 import 'package:broker/features/orders/presentation/views/orders_view.dart';
@@ -19,7 +20,6 @@ class _HomeLayoutState extends State<HomeLayout> {
   int selectedIndex = 0;
   GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
 
-
   List<Widget> screenWidgets = [
     const HomeView(),
     const MapView(),
@@ -32,9 +32,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _drawerKey,
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-      ),
+      drawer: const CustomDrawer(),
       body: screenWidgets[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
@@ -86,7 +84,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         unselectedItemColor: Colors.black,
         selectedIconTheme: const IconThemeData(color: Colors.red),
         unselectedIconTheme:
-        IconThemeData(color: Colors.black.withOpacity(0.7)),
+            IconThemeData(color: Colors.black.withOpacity(0.7)),
       ),
     );
   }
@@ -98,3 +96,4 @@ class _HomeLayoutState extends State<HomeLayout> {
     );
   }
 }
+
