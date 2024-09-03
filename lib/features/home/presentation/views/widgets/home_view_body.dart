@@ -35,21 +35,27 @@ class HomeViewBody extends StatelessWidget {
               ),
               CustomListViewAqarMmlka(),
               Padding(
-                padding: const EdgeInsets.only(right: 16.0,bottom: 16,top: 24),
-                child: Text('خدماتنا',style: Styles.textStyle16,),
+                padding:
+                    const EdgeInsets.only(right: 16.0, bottom: 16, top: 24),
+                child: Text(
+                  'خدماتنا',
+                  style: Styles.textStyle16,
+                ),
               ),
             ],
           ),
         ),
         CustomGridView(),
-        SliverToBoxAdapter(child: Column(
-          children: [
-            const CustomRow(
-              text: 'عقارات مميزة',
-            ),
-            CustomListViewSpecialAqar(),
-          ],
-        ),)
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              const CustomRow(
+                text: 'عقارات مميزة',
+              ),
+              CustomListViewSpecialAqar(),
+            ],
+          ),
+        ),
       ],
     );
   }

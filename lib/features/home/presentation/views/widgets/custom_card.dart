@@ -11,14 +11,16 @@ class CustomCard extends StatefulWidget {
 }
 
 class _CustomCardState extends State<CustomCard> {
-  int activeButtonIndex =
-      1; // Set to 1 to make the first button active by default
+  int activeButtonIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          const EdgeInsets.only(left: 16.0, right: 16, top: 16.0,),
+      padding: const EdgeInsets.only(
+        left: 16.0,
+        right: 16,
+        top: 16.0,
+      ),
       child: Card(
         color: Colors.white,
         child: Padding(
@@ -40,7 +42,7 @@ class _CustomCardState extends State<CustomCard> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: const EdgeInsets.only(bottom: 5),
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
@@ -70,7 +72,7 @@ class _CustomCardState extends State<CustomCard> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.only(bottom: 5),
+                      padding: const EdgeInsets.only(bottom: 5),
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
@@ -106,7 +108,7 @@ class _CustomCardState extends State<CustomCard> {
                       Radius.circular(9),
                     ),
                     border: Border.all(
-                      color: Color(0xFFAFAFAF),
+                      color: const Color(0xFFAFAFAF),
                     ),
                   ),
                   child: Row(
@@ -115,11 +117,11 @@ class _CustomCardState extends State<CustomCard> {
                       Text(
                         activeButtonIndex == 0 ? 'نوع الخدمة' : 'نوع العقار',
                         style: Styles.textStyle14.copyWith(
-                          color: Color(0xFF332620),
+                          color: const Color(0xFF332620),
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFF332620),
                       ),
@@ -140,7 +142,7 @@ class _CustomCardState extends State<CustomCard> {
                       Radius.circular(9),
                     ),
                     border: Border.all(
-                      color: Color(0xFFAFAFAF),
+                      color: const Color(0xFFAFAFAF),
                     ),
                   ),
                   child: Row(
@@ -149,11 +151,11 @@ class _CustomCardState extends State<CustomCard> {
                       Text(
                         'المدينة',
                         style: Styles.textStyle14.copyWith(
-                          color: Color(0xFF332620),
+                          color: const Color(0xFF332620),
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: Color(0xFF332620),
                       ),
@@ -172,7 +174,7 @@ class _CustomCardState extends State<CustomCard> {
                     backgroundColor: kSecondaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
-                      side: BorderSide(color: Colors.red),
+                      side: const BorderSide(color: Colors.red),
                     ),
                   ),
                   onPressed: () {},

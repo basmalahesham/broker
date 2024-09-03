@@ -1,4 +1,5 @@
 import 'package:broker/constants.dart';
+import 'package:broker/features/home/presentation/views/most_interactive_ad_details_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/messages/presentation/views/archive_view.dart';
 import 'package:broker/features/messages/presentation/views/chat_view.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         HomeLayout.routeName: (context) => const HomeLayout(),
         ArchiveView.routeName: (context) => const ArchiveView(),
         ChatView.routeName : (context) => const ChatView(),
+        MostInteractiveAdDetailsView.routeName : (context) => const MostInteractiveAdDetailsView(),
       },
     );
   }

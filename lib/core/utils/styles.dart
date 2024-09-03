@@ -13,6 +13,11 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
+  static TextStyle textStyle24 = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: kFontFamily,
+  );
   static TextStyle textStyle8 = TextStyle(
     fontSize: 8.sp,
     fontWeight: FontWeight.w500,
@@ -38,10 +43,19 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
-
+  static TextStyle textStyle13 = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: kFontFamily,
+  );
   static TextStyle textStyle14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
+    fontFamily: kFontFamily,
+  );
+  static TextStyle textStyle15 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
     fontFamily: kFontFamily,
   );
   static TextStyle textStyle16 = TextStyle(
@@ -49,4 +63,10 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
     fontFamily: kFontFamily,
   );
+  static TextStyle textStyle18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: kFontFamily,
+  );
+
 }

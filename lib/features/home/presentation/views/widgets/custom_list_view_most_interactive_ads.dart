@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/features/home/presentation/views/most_interactive_ad_details_view.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,8 +10,10 @@ class CustomListViewMostInteractiveAds extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(),
+    return InkWell(
+      onTap: (){
+        Navigator.pushNamed(context, MostInteractiveAdDetailsView.routeName);
+      },
       child: SizedBox(
         height: 284.h,
         child: ListView.builder(
