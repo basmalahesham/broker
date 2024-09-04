@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCard extends StatefulWidget {
-  const CustomCard({super.key});
+  const CustomCard({super.key, required this.drawerKey});
+  final GlobalKey<ScaffoldState> drawerKey;
 
   @override
   State<CustomCard> createState() => _CustomCardState();
@@ -177,7 +178,9 @@ class _CustomCardState extends State<CustomCard> {
                       side: const BorderSide(color: Colors.red),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.drawerKey.currentState?.openDrawer();
+                  },
                   child: Text(
                     'أضف طلبك',
                     style: Styles.textStyle14.copyWith(

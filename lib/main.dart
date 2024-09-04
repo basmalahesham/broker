@@ -11,14 +11,16 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(ScreenUtilInit(
-    builder: (child, context) => DevicePreview(
-      enabled: false,
-      builder: (context) => const MyApp(),
+  runApp(
+    ScreenUtilInit(
+      builder: (child, context) => DevicePreview(
+        enabled: false,
+        builder: (context) => const MyApp(),
+      ),
+      minTextAdapt: true,
+      splitScreenMode: true,
     ),
-    minTextAdapt: true,
-    splitScreenMode: true,
-  ),);
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -46,10 +48,11 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashView1.routeName: (context) => const SplashView1(),
         SplashView2.routeName: (context) => const SplashView2(),
-        HomeLayout.routeName: (context) => const HomeLayout(),
+        HomeLayout.routeName: (context) => HomeLayout(selectedIndex: 0),
         ArchiveView.routeName: (context) => const ArchiveView(),
-        ChatView.routeName : (context) => const ChatView(),
-        MostInteractiveAdDetailsView.routeName : (context) => const MostInteractiveAdDetailsView(),
+        ChatView.routeName: (context) => const ChatView(),
+        MostInteractiveAdDetailsView.routeName: (context) =>
+            const MostInteractiveAdDetailsView(),
       },
     );
   }

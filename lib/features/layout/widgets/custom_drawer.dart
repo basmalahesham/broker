@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/layout/widgets/custom_text_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,11 +63,25 @@ class CustomDrawer extends StatelessWidget {
             ),
             CustomTextButtonWidget(
               text: 'الرئيسية',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeLayout(selectedIndex: 0),
+                  ),
+                );
+              },
             ),
             CustomTextButtonWidget(
               text: 'الخريطة العقارية',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeLayout(selectedIndex: 1),
+                  ),
+                );
+              },
             ),
             CustomTextButtonWidget(
               text: 'المشاريع العقارية',
@@ -98,7 +113,6 @@ class CustomDrawer extends StatelessWidget {
                     backgroundColor: const Color(0xFF332620),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
-
                     ),
                   ),
                   onPressed: () {},
