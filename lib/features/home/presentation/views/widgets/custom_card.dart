@@ -119,20 +119,41 @@ class _CustomCardState extends State<CustomCard> {
                 height: 16.h,
               ),
               widget.activeButtonIndex == 0
+                  ? Align(
+                      alignment: Alignment.topRight,
+                      child: Text(
+                        'نوع الخدمة',
+                        style: Styles.textStyle14.copyWith(
+                          color: const Color(0xFF332620).withOpacity(0.7),
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    )
+                  : Align(
+                      alignment: Alignment.topRight,
+                      child: Text(
+                        'نوع العقار',
+                        style: Styles.textStyle14.copyWith(
+                          color: const Color(0xFF332620).withOpacity(0.7),
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ),
+              widget.activeButtonIndex == 0
                   ? DropdownButtonFormField(
-                      dropdownColor: Color(0xFF1E2631),
+                      dropdownColor: const Color(0xFF1E2631),
                       borderRadius: BorderRadius.circular(9),
 
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFAFAFAF),
                           ),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(9),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFAFAFAF),
                           ),
                         ),
@@ -162,18 +183,18 @@ class _CustomCardState extends State<CustomCard> {
                       }).toList(),
                     )
                   : DropdownButtonFormField(
-                      dropdownColor: Color(0xFF1E2631),
+                      dropdownColor: const Color(0xFF1E2631),
                       borderRadius: BorderRadius.circular(9),
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFAFAFAF),
                           ),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(9),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFAFAFAF),
                           ),
                         ),
@@ -205,19 +226,29 @@ class _CustomCardState extends State<CustomCard> {
               SizedBox(
                 height: 8.h,
               ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Text(
+                  'المدينة',
+                  style: Styles.textStyle14.copyWith(
+                    color: const Color(0xFF332620).withOpacity(0.7),
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ),
               DropdownButtonFormField(
                 borderRadius: BorderRadius.circular(9),
-                dropdownColor: Color(0xFF1E2631),
+                dropdownColor: const Color(0xFF1E2631),
                 decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(9),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xFFAFAFAF),
                     ),
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(9),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xFFAFAFAF),
                     ),
                   ),
