@@ -1,47 +1,35 @@
-import 'package:broker/constants.dart';
-import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:broker/constants.dart';
+import 'package:broker/core/utils/styles.dart';
 
-class CustomCard extends StatefulWidget {
-  const CustomCard({super.key, required this.drawerKey});
+class CustomCard extends StatelessWidget {
+  final int activeButtonIndex;
+  final Function(int) onChangeActiveButton;
   final GlobalKey<ScaffoldState> drawerKey;
 
-  @override
-  State<CustomCard> createState() => _CustomCardState();
-}
-
-class _CustomCardState extends State<CustomCard> {
-  int activeButtonIndex = 1;
+  const CustomCard({
+    super.key,
+    required this.activeButtonIndex,
+    required this.onChangeActiveButton,
+    required this.drawerKey,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 16.0,
-        right: 16,
-        top: 16.0,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Card(
         color: Colors.white,
         child: Padding(
-          padding: const EdgeInsets.only(
-            top: 12.0,
-            left: 16,
-            right: 16,
-            bottom: 24,
-          ),
+          padding:
+              const EdgeInsets.only(top: 12.0, left: 16, right: 16, bottom: 24),
           child: Column(
             children: [
               Row(
                 children: [
                   InkWell(
-                    onTap: () {
-                      setState(() {
-                        activeButtonIndex =
-                            1; // Set active button to "طلب عقار"
-                      });
-                    },
+                    onTap: () => onChangeActiveButton(1),
                     child: Container(
                       padding: const EdgeInsets.only(bottom: 5),
                       decoration: BoxDecoration(
@@ -66,12 +54,7 @@ class _CustomCardState extends State<CustomCard> {
                   ),
                   SizedBox(width: 8.w),
                   InkWell(
-                    onTap: () {
-                      setState(() {
-                        activeButtonIndex =
-                            0; // Set active button to "طلب توثيق"
-                      });
-                    },
+                    onTap: () => onChangeActiveButton(0),
                     child: Container(
                       padding: const EdgeInsets.only(bottom: 5),
                       decoration: BoxDecoration(
@@ -80,7 +63,7 @@ class _CustomCardState extends State<CustomCard> {
                             color: activeButtonIndex == 1
                                 ? Colors.white
                                 : kSecondaryColor,
-                            width: 1.0.w,
+                            width: 1.0,
                           ),
                         ),
                       ),
@@ -105,12 +88,8 @@ class _CustomCardState extends State<CustomCard> {
                   width: 311.w,
                   height: 40.h,
                   decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(9),
-                    ),
-                    border: Border.all(
-                      color: const Color(0xFFAFAFAF),
-                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(9)),
+                    border: Border.all(color: const Color(0xFFAFAFAF)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,12 +118,8 @@ class _CustomCardState extends State<CustomCard> {
                   width: 311.w,
                   height: 40.h,
                   decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(9),
-                    ),
-                    border: Border.all(
-                      color: const Color(0xFFAFAFAF),
-                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(9)),
+                    border: Border.all(color: const Color(0xFFAFAFAF)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -164,9 +139,7 @@ class _CustomCardState extends State<CustomCard> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 16.h,
-              ),
+              SizedBox(height: 16.h),
               SizedBox(
                 width: 311.w,
                 height: 40.h,
@@ -179,13 +152,11 @@ class _CustomCardState extends State<CustomCard> {
                     ),
                   ),
                   onPressed: () {
-                    widget.drawerKey.currentState?.openDrawer();
+                    drawerKey.currentState?.openDrawer();
                   },
                   child: Text(
                     'أضف طلبك',
-                    style: Styles.textStyle14.copyWith(
-                      color: Colors.white,
-                    ),
+                    style: Styles.textStyle14.copyWith(color: Colors.white),
                   ),
                 ),
               ),
