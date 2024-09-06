@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/drawer_body_talab_documented.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_card.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_carousel_slider.dart';
@@ -46,7 +47,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   drawerKey: drawerKey,
                 ),
                 const CustomRow(text: 'الاعلانات الاكثر تفاعلا'),
-                CustomListViewMostInteractiveAds(),
+                const CustomListViewMostInteractiveAds(),
                 const CustomRow(text: 'عقارات المملكة'),
                 CustomListViewAqarMmlka(),
                 Padding(
@@ -61,10 +62,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
           ),
           CustomGridView(),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Column(
               children: [
-                const CustomRow(text: 'عقارات مميزة'),
+                CustomRow(text: 'عقارات مميزة'),
                 CustomListViewSpecialAqar(),
               ],
             ),
@@ -77,9 +78,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   // This variable determines which body to display in the drawer
   Widget getDrawerBody() {
     if (activeButtonIndex == 0) {
-      return Center(child: Text("Drawer Body for طلب توثيق"));
+      return const DrawerBodyTalabDocumented();
     } else {
-      return Center(child: Text("Drawer Body for طلب عقار"));
+      return const Center(child: Text("Drawer Body for طلب عقار"));
     }
   }
 }
@@ -327,3 +328,4 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }*/
+
