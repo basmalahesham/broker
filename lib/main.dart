@@ -1,5 +1,8 @@
 import 'package:broker/constants.dart';
+import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/home/presentation/views/most_interactive_ad_details_view.dart';
+import 'package:broker/features/home/presentation/views/talab_aqar_view.dart';
+import 'package:broker/features/home/presentation/views/talab_documented_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/messages/presentation/views/archive_view.dart';
 import 'package:broker/features/messages/presentation/views/chat_view.dart';
@@ -51,8 +54,10 @@ class MyApp extends StatelessWidget {
         HomeLayout.routeName: (context) => HomeLayout(selectedIndex: 0),
         ArchiveView.routeName: (context) => const ArchiveView(),
         ChatView.routeName: (context) => const ChatView(),
-        MostInteractiveAdDetailsView.routeName: (context) =>
-            const MostInteractiveAdDetailsView(),
+        MostInteractiveAdDetailsView.routeName: (context) => const MostInteractiveAdDetailsView(),
+        TalabAqarView.routeName: (context) => const TalabAqarView(),
+        TalabDocumentedView.routeName: (context) => const TalabDocumentedView(),
+        LoginView.routeName: (context) => const LoginView(),
       },
     );
   }

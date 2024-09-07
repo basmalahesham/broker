@@ -1,4 +1,7 @@
+import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/home/data/models/model.dart';
+import 'package:broker/features/home/presentation/views/talab_aqar_view.dart';
+import 'package:broker/features/home/presentation/views/talab_documented_view.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,10 +26,22 @@ class CustomGridView extends StatelessWidget {
       sliver: SliverGrid(
         delegate: SliverChildBuilderDelegate(
           childCount: list.length,
-          (context, index) => CustomImage(
-            width: 159.w,
-            height: 85.h,
-            model: list[index],
+          (context, index) => InkWell(
+            onTap: (){
+              if(index==0) {
+                Navigator.pushNamed(context, TalabAqarView.routeName);
+              }else if(index==1) {
+                Navigator.pushNamed(context, TalabDocumentedView.routeName);
+              }else{
+                Navigator.pushNamed(context, LoginView.routeName);
+
+              }
+            },
+            child: CustomImage(
+              width: 159.w,
+              height: 85.h,
+              model: list[index],
+            ),
           ),
         ),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
