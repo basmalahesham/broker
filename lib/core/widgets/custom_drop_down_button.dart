@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 class CustomDropDownButton extends StatelessWidget {
   const CustomDropDownButton({
     super.key,
-    required this.items, this.filled,
+    required this.items,
+    this.filled,
   });
   final List<String> items;
-   final  bool? filled;
+  final bool? filled;
   @override
   Widget build(BuildContext context) {
     return DropdownSearch<String>(
@@ -35,7 +36,6 @@ class CustomDropDownButton extends StatelessWidget {
               color: Color(0xFFAFAFAF),
             ),
           ),
-
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
             borderSide: const BorderSide(
@@ -57,9 +57,9 @@ class CustomDropDownButton extends StatelessWidget {
             ListTile(
               trailing: isSelected
                   ? const Icon(
-                Icons.radio_button_checked,
-                color: Colors.blue,
-              )
+                      Icons.radio_button_checked,
+                      color: Colors.blue,
+                    )
                   : const Icon(Icons.radio_button_unchecked),
               title: Text(
                 item,
@@ -71,14 +71,14 @@ class CustomDropDownButton extends StatelessWidget {
             ),
             item == items.last
                 ? const Visibility(
-              visible: false,
-              child: Divider(),
-            )
+                    visible: false,
+                    child: Divider(),
+                  )
                 : const Divider(
-              indent: 10,
-              endIndent: 10,
-              color: Color(0xFFAFAFAF),
-            ),
+                    indent: 10,
+                    endIndent: 10,
+                    color: Color(0xFFAFAFAF),
+                  ),
           ],
         ),
       ),

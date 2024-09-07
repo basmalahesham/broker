@@ -133,7 +133,9 @@ class _CustomCardState extends State<CustomCard> {
                         ),
                       ),
                     ),
-              SizedBox(height: 8.h,),
+              SizedBox(
+                height: 8.h,
+              ),
               widget.activeButtonIndex == 0
                   ? CustomDropDownButton(
                       items: list1,
@@ -153,7 +155,9 @@ class _CustomCardState extends State<CustomCard> {
                   ),
                 ),
               ),
-              SizedBox(height: 8.h,),
+              SizedBox(
+                height: 8.h,
+              ),
               CustomDropDownButton(
                 items: list3,
               ),

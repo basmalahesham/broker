@@ -1,6 +1,5 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
-import 'package:broker/core/widgets/drawer_body_talab_documented.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,7 +25,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -36,7 +35,6 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                 padding: EdgeInsets.zero,
                 icon: const Icon(Icons.close),
                 onPressed: () {
-
                   Navigator.pop(context);
                 },
               ),
@@ -55,12 +53,11 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       activeButtonIndex = 1;
                     });
-                   drawerKey.currentState?.openDrawer();
-
+                    drawerKey.currentState?.openDrawer();
                   },
                   child: Container(
                     width: 150.w,
@@ -91,14 +88,15 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20.w,),
+                SizedBox(
+                  height: 20.w,
+                ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       activeButtonIndex = 0;
                     });
                     drawerKey.currentState?.openDrawer();
-
                   },
                   child: Container(
                     width: 150.w,
@@ -129,7 +127,6 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                     ),
                   ),
                 ),
-
               ],
             )
           ],
@@ -140,7 +137,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
   Widget getDrawerBody() {
     if (activeButtonIndex == 0) {
-      return const DrawerBodyTalabDocumented();
+      return const Center(child: Text("Drawer Body for طلب توثيق"));
     } else {
       return const Center(child: Text("Drawer Body for طلب عقار"));
     }
