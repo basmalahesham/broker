@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 class CustomDropDownButton extends StatelessWidget {
   const CustomDropDownButton({
     super.key,
-    required this.items,
+    required this.items, this.filled,
   });
   final List<String> items;
+   final  bool? filled;
   @override
   Widget build(BuildContext context) {
     return DropdownSearch<String>(
@@ -20,12 +21,21 @@ class CustomDropDownButton extends StatelessWidget {
       ),
       dropdownDecoratorProps: DropDownDecoratorProps(
         dropdownSearchDecoration: InputDecoration(
+          fillColor: Colors.white,
+          filled: filled,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
             borderSide: const BorderSide(
               color: Color(0xFFAFAFAF),
             ),
           ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(9),
+            borderSide: const BorderSide(
+              color: Color(0xFFAFAFAF),
+            ),
+          ),
+
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
             borderSide: const BorderSide(

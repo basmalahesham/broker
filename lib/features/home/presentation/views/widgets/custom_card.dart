@@ -121,7 +121,6 @@ class _CustomCardState extends State<CustomCard> {
                         'نوع الخدمة',
                         style: Styles.textStyle14.copyWith(
                           color: const Color(0xFF332620).withOpacity(0.7),
-                          fontWeight: FontWeight.normal,
                         ),
                       ),
                     )
@@ -131,10 +130,10 @@ class _CustomCardState extends State<CustomCard> {
                         'نوع العقار',
                         style: Styles.textStyle14.copyWith(
                           color: const Color(0xFF332620).withOpacity(0.7),
-                          fontWeight: FontWeight.normal,
                         ),
                       ),
                     ),
+              SizedBox(height: 8.h,),
               widget.activeButtonIndex == 0
                   ? CustomDropDownButton(
                       items: list1,
@@ -151,10 +150,10 @@ class _CustomCardState extends State<CustomCard> {
                   'المدينة',
                   style: Styles.textStyle14.copyWith(
                     color: const Color(0xFF332620).withOpacity(0.7),
-                    fontWeight: FontWeight.normal,
                   ),
                 ),
               ),
+              SizedBox(height: 8.h,),
               CustomDropDownButton(
                 items: list3,
               ),

@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/drawer_body_talab_aqar.dart';
 import 'package:broker/core/widgets/drawer_body_talab_documented.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_card.dart';
@@ -80,7 +81,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     if (activeButtonIndex == 0) {
       return const DrawerBodyTalabDocumented();
     } else {
-      return const Center(child: Text("Drawer Body for طلب عقار"));
+      return const DrawerBodyTalabAqar();
     }
   }
 }

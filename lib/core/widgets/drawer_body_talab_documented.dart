@@ -46,167 +46,199 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: IconButton(
-              padding: EdgeInsets.zero,
-              icon: const Icon(Icons.close),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-          Text(
-            'طلب موثق',
-            style: Styles.textStyle20.copyWith(
-              color: kSecondaryColor,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20),
-          Form(
-            key: _formKey,
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    'نوع الخدمة',
-                    style: Styles.textStyle14.copyWith(
-                      color: const Color(0xFF332620).withOpacity(0.7),
-                      fontWeight: FontWeight.normal,
-                    ),
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(Icons.close),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
-                CustomDropDownButton(items: list2),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    'نوع العقار',
-                    style: Styles.textStyle14.copyWith(
-                      color: const Color(0xFF332620).withOpacity(0.7),
-                      fontWeight: FontWeight.normal,
-                    ),
+                Text(
+                  'طلب موثق',
+                  style: Styles.textStyle20.copyWith(
+                    color: kSecondaryColor,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-                CustomDropDownButton(items: list1),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    'عدد العقارات',
-                    style: Styles.textStyle14.copyWith(
-                      color: const Color(0xFF332620).withOpacity(0.7),
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  //inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(9),
-                      borderSide: const BorderSide(
-                        color: Color(0xFFAFAFAF),
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(9),
-                      borderSide: const BorderSide(
-                        color: Color(0xFFAFAFAF),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'تاريخ المقابلة',
+                SizedBox(height: 10.h),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          'نوع الخدمة',
                           style: Styles.textStyle14.copyWith(
                             color: const Color(0xFF332620).withOpacity(0.7),
-                            fontWeight: FontWeight.normal,
                           ),
                         ),
-                        CustomInkwellDate(
-                          selectedDate: selectedDate,
-                          onTap: () {
-                            selectDateTime();
-                          },
-                          text: (DateFormat.yMd().format(selectedDate)),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'وقت المقابلة',
+                      ),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      CustomDropDownButton(
+                        items: list2,
+                        filled: true,
+                      ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          'نوع العقار',
                           style: Styles.textStyle14.copyWith(
                             color: const Color(0xFF332620).withOpacity(0.7),
-                            fontWeight: FontWeight.normal,
                           ),
                         ),
-                        CustomInkwellDate(
-                          selectedDate: selectedDate,
-                          onTap: () {
-                            selectTime();
-                          },
-                          text: '${selectedTime.hour}:${selectedTime.minute}',
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    'المدينة',
-                    style: Styles.textStyle14.copyWith(
-                      color: const Color(0xFF332620).withOpacity(0.7),
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-                CustomDropDownButton(
-                  items: list3,
-                ),
-                const SizedBox(height: 20),
-                Image.asset('assets/images/Frame.png'),
-                const SizedBox(height: 20),
-                SizedBox(
-                  width: 311.w,
-                  height: 30.h,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kSecondaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                        side: const BorderSide(color: Colors.red),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      'طلب',
-                      style: Styles.textStyle14.copyWith(color: Colors.white),
-                    ),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      CustomDropDownButton(
+                        items: list1,
+                        filled: true,
+                      ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          'عدد العقارات',
+                          style: Styles.textStyle14.copyWith(
+                            color: const Color(0xFF332620).withOpacity(0.7),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        //inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(9),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFAFAFAF),
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(9),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFAFAFAF),
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(9),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFAFAFAF),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10.h),
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'تاريخ المقابلة',
+                                style: Styles.textStyle14.copyWith(
+                                  color:
+                                      const Color(0xFF332620).withOpacity(0.7),
+                                ),
+                              ),
+                              SizedBox(height: 8.h),
+                              CustomInkwellDate(
+                                selectedDate: selectedDate,
+                                onTap: () {
+                                  selectDateTime();
+                                },
+                                text: (DateFormat.yMd().format(selectedDate)),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'وقت المقابلة',
+                                style: Styles.textStyle14.copyWith(
+                                  color:
+                                      const Color(0xFF332620).withOpacity(0.7),
+                                ),
+                              ),
+                              SizedBox(height: 8.h),
+                              CustomInkwellDate(
+                                selectedDate: selectedDate,
+                                onTap: () {
+                                  selectTime();
+                                },
+                                text:
+                                    '${selectedTime.hour}:${selectedTime.minute}',
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10.h),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          'المدينة',
+                          style: Styles.textStyle14.copyWith(
+                            color: const Color(0xFF332620).withOpacity(0.7),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 8.h),
+                      CustomDropDownButton(
+                        items: list3,
+                        filled: true,
+                      ),
+                      SizedBox(height: 10.h),
+                      Image.asset('assets/images/Frame.png'),
+                      SizedBox(height: 10.h),
+                      SizedBox(
+                        width: 311.w,
+                        height: 30.h,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kSecondaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              side: const BorderSide(color: Colors.red),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            'طلب',
+                            style: Styles.textStyle14
+                                .copyWith(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -237,7 +269,6 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
       });
     }
   }
-
 }
 
 class CustomInkwellDate extends StatelessWidget {
@@ -259,6 +290,7 @@ class CustomInkwellDate extends StatelessWidget {
         width: 110.w,
         // height: 60,
         decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(9),
           border: Border.all(
             color: const Color(0xFFAFAFAF),
