@@ -262,6 +262,10 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
     final TimeOfDay? picked = await showTimePicker(
       context: context,
       initialTime: selectedTime,
+      initialEntryMode: TimePickerEntryMode.inputOnly,
+      cancelText: 'Cancel',
+      confirmText: 'Set',
+      helpText: 'Set Time',
     );
     if (picked != null && picked != selectedTime) {
       setState(() {
