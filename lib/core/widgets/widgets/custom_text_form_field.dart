@@ -15,8 +15,8 @@ class CustomTextFormField extends StatelessWidget {
       height: 40.h,
       child: TextFormField(
         validator: (value) {
-          if (value == null) {
-            return 'Please enter your email';
+          if (value == null||value.isEmpty) {
+            return 'enter a value';
           }
           return null;
         },
@@ -28,6 +28,9 @@ class CustomTextFormField extends StatelessWidget {
           hintText: text,
           hintStyle: Styles.textStyle14.copyWith(
             color: const Color(0xFFAFAFAF),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(9),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
