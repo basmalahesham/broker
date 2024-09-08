@@ -3,6 +3,7 @@ import 'package:broker/core/utils/styles.dart';
 import 'package:broker/features/home/presentation/views/widgets/build_property_data_form.dart';
 import 'package:broker/features/home/presentation/views/widgets/build_property_data_form2.dart';
 import 'package:broker/features/home/presentation/views/widgets/build_property_data_form3.dart';
+import 'package:broker/features/home/presentation/views/widgets/build_property_data_form4.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,9 @@ class _TalabAqarViewState extends State<TalabAqarView> {
         onNext: nextStep,
         onPrevious: previousStep,
       ),
-      Container(),
+      BuildPropertyDataForm4(
+        onPrevious: previousStep,
+      ),
     ];
 
     return Scaffold(
