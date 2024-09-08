@@ -1,6 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
-import 'package:broker/core/widgets/widgets/custom_row_check.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_row_check_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -50,7 +50,7 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
           ),
         ),
         SizedBox(height: 10.h),
-        const CustomRowCheck(text: 'الموافقة على الشروط و الاحكام'),
+        CustomRowCheckHome(text: 'الموافقة على الشروط و الاحكام',isChecked: true,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

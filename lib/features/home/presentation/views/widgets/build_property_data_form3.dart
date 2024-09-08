@@ -1,6 +1,6 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
-import 'package:broker/core/widgets/widgets/custom_row_check.dart';
+import 'package:broker/features/home/presentation/views/widgets/custom_row_check_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -106,8 +106,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-            const CustomRowCheck(text: 'مؤنثة'),
-            const CustomRowCheck(text: 'غير مؤنثة'),
+             CustomRowCheckHome(text: 'مؤنثة'),
+             CustomRowCheckHome(text: 'غير مؤنثة'),
           ],
         ),
         SizedBox(height: 10.h),
@@ -161,8 +161,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-            const CustomRowCheck(text: 'نعم'),
-            const CustomRowCheck(text: 'لا'),
+             CustomRowCheckHome(text: 'نعم'),
+             CustomRowCheckHome(text: 'لا'),
           ],
         ),
         SizedBox(
@@ -218,8 +218,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-            const CustomRowCheck(text: 'مهتم'),
-            const CustomRowCheck(text: 'غير مهتم'),
+             CustomRowCheckHome(text: 'مهتم'),
+             CustomRowCheckHome(text: 'غير مهتم'),
           ],
         ),
         SizedBox(
@@ -239,8 +239,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-            const CustomRowCheck(text: 'مدحلين'),
-            const CustomRowCheck(text: 'مدخل خاص'),
+             CustomRowCheckHome(text: 'مدحلين'),
+             CustomRowCheckHome(text: 'مدخل خاص'),
           ],
         ),
         SizedBox(height: 20.h),

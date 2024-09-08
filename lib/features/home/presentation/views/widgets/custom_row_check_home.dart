@@ -1,17 +1,20 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomRowCheck extends StatefulWidget {
-  const CustomRowCheck({super.key, required this.text});
+class CustomRowCheckHome extends StatefulWidget {
+   CustomRowCheckHome({
+    super.key,
+    required this.text,
+    this.isChecked = false,
+  });
 
   final String text;
+  bool? isChecked;
   @override
-  State<CustomRowCheck> createState() => _CustomRowCheckState();
+  State<CustomRowCheckHome> createState() => _CustomRowCheckHomeState();
 }
 
-class _CustomRowCheckState extends State<CustomRowCheck> {
-  bool isChecked = false;
-
+class _CustomRowCheckHomeState extends State<CustomRowCheckHome> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,11 +24,10 @@ class _CustomRowCheckState extends State<CustomRowCheck> {
             color: Color(0xFFAFAFAF),
           ),
           activeColor: Colors.blue,
-          fillColor: const WidgetStatePropertyAll(Colors.white),
-          value: isChecked,
+          value: widget.isChecked,
           onChanged: (value) {
             setState(() {
-              isChecked = value ?? false;
+              widget.isChecked = value;
             });
           },
         ),
