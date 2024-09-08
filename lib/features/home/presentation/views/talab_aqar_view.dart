@@ -50,6 +50,11 @@ class _TalabAqarViewState extends State<TalabAqarView> {
       ),
       BuildPropertyDataForm4(
         onPrevious: previousStep,
+        onReset: () {
+          setState(() {
+            activeStep = 0; // Reset to step 1
+          });
+        },
       ),
     ];
 
@@ -100,57 +105,84 @@ class _TalabAqarViewState extends State<TalabAqarView> {
                     child: Column(
                       children: [
                         EasyStepper(
+                          lineStyle: const LineStyle(
+                            defaultLineColor: Colors.grey,
+                            lineType: LineType.normal,
+                          ),
+                          defaultStepBorderType: BorderType.normal,
                           activeStep: activeStep,
                           stepRadius: 20,
                           borderThickness: 2,
                           activeStepBackgroundColor: Colors.white,
                           activeStepBorderColor: kSecondaryColor,
                           activeStepTextColor: kSecondaryColor,
-                          unreachedStepBorderColor: Colors.black,
+                          unreachedStepBorderColor: const Color(0xFF332620),
                           unreachedStepBackgroundColor: Colors.white,
-                          unreachedStepTextColor: kSecondaryColor,
-                          finishedStepTextColor: Colors.white,
+                          unreachedStepTextColor: const Color(0xFF332620),
                           finishedStepBackgroundColor: Colors.red,
+                          finishedStepTextColor: kSecondaryColor,
                           showLoadingAnimation: false,
                           steps: [
                             EasyStep(
                               customStep: Opacity(
                                 opacity: activeStep >= 0 ? 1 : 0.3,
-                                child: const Text('1'),
+                                child: Text(
+                                  '1',
+                                  style: TextStyle(
+                                    color: activeStep == 0
+                                        ? Colors.black
+                                        : Colors.white,
+                                  ),
+                                ),
                               ),
-                              customTitle: const Text(
-                                'بيانات\nالعقار',
-                                textAlign: TextAlign.center,
-                              ),
+                              title: 'بيانات\nالعقار',
                             ),
                             EasyStep(
                               customStep: Opacity(
                                 opacity: activeStep >= 1 ? 1 : 0.3,
-                                child: const Text('2'),
+                                child: Text(
+                                  '2',
+                                  style: TextStyle(
+                                    color: activeStep == 1
+                                        ? Colors.black
+                                        : activeStep > 0
+                                            ? Colors.white
+                                            : Colors.black,
+                                  ),
+                                ),
                               ),
-                              customTitle: const Text(
-                                'مكان\nالعقار',
-                                textAlign: TextAlign.center,
-                              ),
+                              title: 'مكان\nالعقار',
                             ),
                             EasyStep(
                               customStep: Opacity(
                                 opacity: activeStep >= 2 ? 1 : 0.3,
-                                child: const Text('3'),
+                                child: Text(
+                                  '3',
+                                  style: TextStyle(
+                                    color: activeStep == 2
+                                        ? Colors.black
+                                        : activeStep > 1
+                                        ? Colors.white
+                                        : Colors.black,
+                                  ),
+                                ),
                               ),
-                              customTitle: const Text(
-                                'خصائص\nالعقار',
-                                textAlign: TextAlign.center,
-                              ),
+                              title: 'خصائص\nالعقار',
                             ),
                             EasyStep(
+                              title: 'ملاحظات\nالطلب',
                               customStep: Opacity(
                                 opacity: activeStep >= 3 ? 1 : 0.3,
-                                child: const Text('4'),
-                              ),
-                              customTitle: const Text(
-                                'ملاحظات\nالطلب',
-                                textAlign: TextAlign.center,
+                                child: Text(
+                                  '4',
+                                  style: TextStyle(
+                                    color: activeStep == 3
+                                        ? Colors.black
+                                        : activeStep > 2
+                                        ? Colors.white
+                                        : Colors.black,
+                                  ),
+                                ),
                               ),
                             ),
                           ],

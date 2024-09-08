@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildPropertyDataForm4 extends StatefulWidget {
-  const BuildPropertyDataForm4({super.key, required this.onPrevious});
-
+  const BuildPropertyDataForm4({super.key, required this.onPrevious, required this.onReset});
+  final VoidCallback onReset;
   final VoidCallback onPrevious;
 
   @override
@@ -82,6 +82,7 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
                   ),
                 ),
                 onPressed: () {
+                  widget.onReset();
                   showSnackBar(context);
                 }, // Call the onNext function
                 child: Text(
@@ -103,12 +104,12 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
         backgroundColor: Colors.white,
         content: Column(
           children: [
-            Icon(
+            const Icon(
               Icons.check_circle,
               color: kSecondaryColor,
               size: 80,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
@@ -117,17 +118,17 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
                 color: kSecondaryColor,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               'سوف نقوم بمراجعة طلبك وابلاغك فور نشره',
               style: Styles.textStyle16.copyWith(
                 fontWeight: FontWeight.normal,
-                color: Color(0xFF332620),
+                color: const Color(0xFF332620),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -149,7 +150,7 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],
