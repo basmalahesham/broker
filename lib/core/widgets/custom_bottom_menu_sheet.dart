@@ -12,6 +12,7 @@ class CustomBottomMenuSheet extends StatefulWidget {
 }
 
 class _CustomBottomMenuSheetState extends State<CustomBottomMenuSheet> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,7 +37,7 @@ class _CustomBottomMenuSheetState extends State<CustomBottomMenuSheet> {
               ),
             ),
             Text(
-              'حدد طلبك',
+              'حدد خدمتك!',
               style: Styles.textStyle20.copyWith(
                 fontWeight: FontWeight.w500,
                 color: kSecondaryColor,

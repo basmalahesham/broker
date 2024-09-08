@@ -162,8 +162,8 @@ class _TalabAqarViewState extends State<TalabAqarView> {
                                     color: activeStep == 2
                                         ? Colors.black
                                         : activeStep > 1
-                                        ? Colors.white
-                                        : Colors.black,
+                                            ? Colors.white
+                                            : Colors.black,
                                   ),
                                 ),
                               ),
@@ -179,8 +179,8 @@ class _TalabAqarViewState extends State<TalabAqarView> {
                                     color: activeStep == 3
                                         ? Colors.black
                                         : activeStep > 2
-                                        ? Colors.white
-                                        : Colors.black,
+                                            ? Colors.white
+                                            : Colors.black,
                                   ),
                                 ),
                               ),

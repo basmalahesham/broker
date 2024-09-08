@@ -1,3 +1,4 @@
+import 'package:broker/core/utils/functions/show_custom_bottom_sheet.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,10 +25,15 @@ class CustomAppBarHomeView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'تسجيل دخول',
-            style: Styles.textStyle11.copyWith(
-              color: Colors.white,
+          TextButton(
+            onPressed: () {
+              showCustomBottomSheet(context);
+            },
+            child: Text(
+              'تسجيل دخول',
+              style: Styles.textStyle11.copyWith(
+                color: Colors.white,
+              ),
             ),
           ),
           Image.asset(
@@ -37,4 +43,5 @@ class CustomAppBarHomeView extends StatelessWidget {
       ),
     );
   }
+
 }
