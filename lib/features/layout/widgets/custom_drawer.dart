@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_bottom_menu_sheet.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/layout/widgets/custom_text_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -115,7 +116,9 @@ class CustomDrawer extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    showCustomBottomSheet(context);
+                  },
                   child: Text(
                     'انضم إلينا',
                     style: Styles.textStyle14.copyWith(
@@ -130,4 +133,11 @@ class CustomDrawer extends StatelessWidget {
       ),
     );
   }
+  void showCustomBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => CustomBottomMenuSheet(),
+    );
+  }
+
 }
