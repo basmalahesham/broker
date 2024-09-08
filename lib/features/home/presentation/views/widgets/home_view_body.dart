@@ -27,6 +27,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return Scaffold(
       key: drawerKey,
       drawer: Drawer(
+        backgroundColor: const Color(0xFFF5F5F5),
         child: getDrawerBody(),
       ),
       body: CustomScrollView(
@@ -329,4 +330,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }*/
-

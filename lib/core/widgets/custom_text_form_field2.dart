@@ -22,7 +22,7 @@ class CustomTextFormField2 extends StatelessWidget {
         hintStyle: Styles.textStyle14.copyWith(
           color: Colors.grey,
         ),
-        fillColor: Color(0xFFFDFDFD),
+        fillColor: const Color(0xFFFDFDFD),
         filled: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(9),

@@ -23,7 +23,7 @@ class CustomTextFormField extends StatelessWidget {
         keyboardType: TextInputType.number,
         //inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         decoration: InputDecoration(
-          fillColor: Colors.white,
+          fillColor: const Color(0xFFFDFDFD),
           filled: true,
           hintText: text,
           hintStyle: Styles.textStyle14.copyWith(

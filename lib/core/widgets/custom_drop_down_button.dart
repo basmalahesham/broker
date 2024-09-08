@@ -22,7 +22,7 @@ class CustomDropDownButton extends StatelessWidget {
       ),
       dropdownDecoratorProps: DropDownDecoratorProps(
         dropdownSearchDecoration: InputDecoration(
-          fillColor: Colors.white,
+          fillColor: const Color(0xFFFDFDFD),
           filled: filled,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(9),
