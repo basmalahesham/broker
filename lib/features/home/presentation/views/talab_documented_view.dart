@@ -8,6 +8,7 @@ class TalabDocumentedView extends StatelessWidget {
   const TalabDocumentedView({super.key});
 
   static const String routeName = "TalabDocumentedView";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
