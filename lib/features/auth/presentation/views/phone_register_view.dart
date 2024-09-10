@@ -1,7 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
-import 'package:broker/features/auth/presentation/views/phone_verification_view.dart';
+import 'package:broker/features/auth/presentation/views/otp_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -103,7 +103,7 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
                             if (formKey.currentState!.validate()) {
                               Navigator.pushReplacementNamed(
                                 context,
-                                PhoneVerificationView.routeName,
+                                OTPView.routeName,
                                 arguments: phoneController.text,
                               );
                               showSnackBar(context);

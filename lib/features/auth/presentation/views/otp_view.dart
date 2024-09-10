@@ -1,25 +1,20 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
-import 'package:broker/features/auth/presentation/views/widgets/text_form_field_verification.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pinput/pinput.dart';
 
-class PhoneVerificationView extends StatefulWidget {
-  const PhoneVerificationView({super.key});
+class OTPView extends StatefulWidget {
+  const OTPView({super.key});
   static const String routeName = 'phone_verification_view';
 
   @override
-  State<PhoneVerificationView> createState() => _PhoneVerificationViewState();
+  State<OTPView> createState() => _OTPViewState();
 }
 
-class _PhoneVerificationViewState extends State<PhoneVerificationView> {
+class _OTPViewState extends State<OTPView> {
   final formKey = GlobalKey<FormState>();
-  TextEditingController c1 = TextEditingController();
-  TextEditingController c2 = TextEditingController();
-  TextEditingController c3 = TextEditingController();
-  TextEditingController c4 = TextEditingController();
-
+  final pinController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)!.settings.arguments as String;
@@ -57,37 +52,40 @@ class _PhoneVerificationViewState extends State<PhoneVerificationView> {
                         ),
                       ),
                       Text(
-                        'تم ارسال كود التحقق الى ${args}',
+                        'تم ارسال كود التحقق الى $args',
                         style: Styles.textStyle14.copyWith(
                           fontWeight: FontWeight.normal,
                           color: const Color(0xFF332620),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          TextFormFieldVerification(
-                            controller: c1,
-                            last: false,
-                            first: true,
+                      Pinput(
+                        validator: (pinController){
+                          if (pinController==null||pinController.isEmpty) {
+                            return 'enter a value';
+                          }
+                          return null;
+                        },
+                        controller: pinController,
+                        length: 4,
+                        pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                        showCursor: true,
+                        onCompleted: (pin) => print(pin),
+                        defaultPinTheme: PinTheme(
+                          width: 56,
+                          height: 56,
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Color.fromRGBO(30, 60, 87, 1),
+                            fontWeight: FontWeight.w600,
                           ),
-                          TextFormFieldVerification(
-                            controller: c2,
-                            last: false,
-                            first: false,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: const Color.fromRGBO(234, 239, 243, 1),
+                            ),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          TextFormFieldVerification(
-                            controller: c3,
-                            last: false,
-                            first: false,
-                          ),
-                          TextFormFieldVerification(
-                            controller: c4,
-                            last: true,
-                            first: false,
-                          ),
-                        ],
+                        ),
+
                       ),
                       SizedBox(
                         width: 130.w,
