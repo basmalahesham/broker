@@ -1,6 +1,8 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/widgets/custom_inkwell_container.dart';
+import 'package:broker/features/auth/presentation/views/phone_register_view.dart';
+import 'package:broker/features/auth/presentation/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -49,7 +51,12 @@ class _CustomBottomMenuSheetState extends State<CustomBottomMenuSheet> {
             Row(
               children: [
                 CustomInkwellContainer(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      PhoneRegisterView.routeName,
+                    );
+                  },
                   text: 'باحث عن عقار',
                   icon: Icons.person,
                 ),
@@ -57,7 +64,12 @@ class _CustomBottomMenuSheetState extends State<CustomBottomMenuSheet> {
                   width: 20.w,
                 ),
                 CustomInkwellContainer(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      PhoneRegisterView.routeName,
+                    );
+                  },
                   text: 'مسوق عقاري',
                   icon: Icons.person_outline_sharp,
                 ),
@@ -69,7 +81,12 @@ class _CustomBottomMenuSheetState extends State<CustomBottomMenuSheet> {
             Row(
               children: [
                 CustomInkwellContainer(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      RegisterView.routeName,
+                    );
+                  },
                   text: 'موثق عقاري',
                   icon: Icons.person_pin_outlined,
                 ),

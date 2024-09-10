@@ -16,7 +16,7 @@ class CustomInkwellContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         width: 150.w,
         height: 65.h,
