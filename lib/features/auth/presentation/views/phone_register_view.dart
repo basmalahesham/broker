@@ -1,4 +1,3 @@
-import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/features/auth/presentation/views/otp_view.dart';
@@ -134,22 +133,36 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        backgroundColor: Colors.white,
-        content: Column(
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Color(0xFF72B371),
+        content: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Success',
+                  style: Styles.textStyle20.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'تم ارسال كود التحقق',
+                  style: Styles.textStyle14.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+
+              ],
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
             const Icon(
-              Icons.check_circle,
-              color: kSecondaryColor,
-              size: 80,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              'تم بنجاح\nتم ارسال كود التحقق',
-              style: Styles.textStyle20.copyWith(
-                color: kSecondaryColor,
-              ),
+              Icons.check,
+              color: Colors.white,
+              size: 40,
             ),
           ],
         ),

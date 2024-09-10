@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/features/auth/presentation/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
@@ -80,7 +81,7 @@ class _OTPViewState extends State<OTPView> {
                           ),
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromRGBO(234, 239, 243, 1),
+                              color: const Color.fromRGBO(208, 213, 218, 1.0),
                             ),
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -97,7 +98,14 @@ class _OTPViewState extends State<OTPView> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              Navigator.pushReplacementNamed(
+                                context,
+                                RegisterView.routeName,
+                              );
+                            }
+                          },
                           child: Text(
                             'تأكيد',
                             style: Styles.textStyle14.copyWith(
