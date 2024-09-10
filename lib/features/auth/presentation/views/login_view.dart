@@ -43,6 +43,8 @@ class _LoginViewState extends State<LoginView> {
                 Text(
                   'تسجيل الدخول',
                   style: Styles.textStyle24.copyWith(
+                    fontWeight: FontWeight.normal,
+
                     color: const Color(0xFF332620),
                   ),
                 ),
@@ -109,23 +111,11 @@ class _LoginViewState extends State<LoginView> {
                             );
                           }
                         }, // Call the onNext function
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'تسجيل دخول',
-                              style: Styles.textStyle14.copyWith(
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            const Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            ),
-                          ],
+                        child: Text(
+                          'تسجيل دخول',
+                          style: Styles.textStyle14.copyWith(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -146,23 +136,11 @@ class _LoginViewState extends State<LoginView> {
                               PhoneRegisterView.routeName,
                             );
                           }, // Call the onNext function
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'انشاء حساب',
-                                style: Styles.textStyle14.copyWith(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              const Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                            ],
+                          child: Text(
+                            'انشاء حساب',
+                            style: Styles.textStyle14.copyWith(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),

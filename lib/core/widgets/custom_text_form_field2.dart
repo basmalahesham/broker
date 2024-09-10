@@ -22,6 +22,7 @@ class CustomTextFormField2 extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: Styles.textStyle14.copyWith(
+          fontWeight: FontWeight.normal,
           color: Colors.grey,
         ),
         fillColor: const Color(0xFFFDFDFD),

@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/auth/presentation/views/phone_register_view.dart';
+import 'package:broker/features/auth/presentation/views/phone_verification_view.dart';
 import 'package:broker/features/home/presentation/views/most_interactive_ad_details_view.dart';
 import 'package:broker/features/home/presentation/views/talab_aqar_view.dart';
 import 'package:broker/features/home/presentation/views/talab_documented_view.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         TalabDocumentedView.routeName: (context) => const TalabDocumentedView(),
         LoginView.routeName: (context) => const LoginView(),
         PhoneRegisterView.routeName: (context) => const PhoneRegisterView(),
+        PhoneVerificationView.routeName: (context) => const PhoneVerificationView(),
       },
     );
   }
