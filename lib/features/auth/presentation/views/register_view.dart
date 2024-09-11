@@ -2,8 +2,10 @@ import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:path/path.dart' as p;
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -22,7 +24,9 @@ class _RegisterViewState extends State<RegisterView> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-
+  //String? _imagePath;
+  //File? file;
+  String? _fileName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +61,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'الاسم كامل',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -65,19 +69,18 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.person_pin_sharp,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
-
                           Expanded(
                             child: CustomTextFormField2(
                               controller: nameController,
@@ -98,7 +101,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'البريد الالكتروني',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -106,16 +109,16 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.email_outlined,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
                           Expanded(
@@ -140,7 +143,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'اسم الشركة',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -148,16 +151,16 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.email_outlined,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
                           Expanded(
@@ -171,7 +174,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'كلمة المرور',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -179,19 +182,18 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.lock_outline,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
-
                           Expanded(
                             child: CustomTextFormField2(
                               controller: passwordController,
@@ -215,7 +217,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'تأكيد كلمة المرور',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -223,19 +225,18 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.lock_outline,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
-
                           Expanded(
                             child: CustomTextFormField2(
                               controller: confirmPasswordController,
@@ -257,7 +258,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'رقم الهاتف',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -265,19 +266,18 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.phone_android_rounded,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
-
                           Expanded(
                             child: CustomTextFormField2(
                               controller: phoneController,
@@ -301,7 +301,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         'الصورة الشخصية',
                         style: Styles.textStyle16.copyWith(
-                          color: Color(0xFF332620).withOpacity(0.7),
+                          color: const Color(0xFF332620).withOpacity(0.7),
                         ),
                       ),
                       Row(
@@ -309,42 +309,64 @@ class _RegisterViewState extends State<RegisterView> {
                           Container(
                             width: 40.w,
                             height: 40.h,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFE8EEEB),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(9),
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.perm_media_outlined,
-                              color: const Color(0xFFBF554B),
+                              color: Color(0xFFBF554B),
                             ),
                           ),
-
+                          InkWell(
+                            onTap: () async {
+                              await _chooseFile();
+                            },
+                            child: Container(
+                              width: 120.w,
+                              height: 40.h,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFE8EEEB),
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(9),
+                                  bottomRight: Radius.circular(9),
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Choose file',
+                                  style: Styles.textStyle16,
+                                ),
+                              ),
+                            ),
+                          ),
                           Expanded(
-                            child: CustomTextFormField2(
-                              controller: phoneController,
-                              hintText: 'ادخل رقم الهاتف',
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'enter a value';
-                                }
-                                if (value.length > 10) {
-                                  return 'the phone field must not be greater than 10 characters';
-                                }
-                                if (value.length < 10) {
-                                  return 'the phone field must be at least 10 characters';
-                                }
-                                return null;
-                              },
+                            child: Container(
+                              height: 40.h,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: const Color(0xFFE8EEEB),
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  _fileName ?? 'No file chosen',
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ),
                             ),
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       Center(
                         child: SizedBox(
-                          width: 260.w,
+                          width: 280.w,
                           height: 40.h,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
@@ -406,5 +428,33 @@ class _RegisterViewState extends State<RegisterView> {
         ],
       ),
     );
+  }
+
+/*
+  Future<void> pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    if(image!=null) {
+      setState(() {
+        file = File(image.path);
+      });
+    }
+    */
+/*if (image != null) {
+      setState(() {
+        _imagePath = image.name;
+      });
+    }*/ /*
+
+  }
+*/
+  Future<void> _chooseFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+    if (result != null) {
+      setState(() {
+        _fileName = result.files.single.name;
+      });
+    }
   }
 }
