@@ -2,10 +2,9 @@ import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:path/path.dart' as p;
+import 'package:image_picker/image_picker.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -24,9 +23,9 @@ class _RegisterViewState extends State<RegisterView> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-  //String? _imagePath;
+  String? _imagePath;
   //File? file;
-  String? _fileName;
+  //String? _fileName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -323,7 +322,7 @@ class _RegisterViewState extends State<RegisterView> {
                           ),
                           InkWell(
                             onTap: () async {
-                              await _chooseFile();
+                              await pickImage();
                             },
                             child: Container(
                               width: 120.w,
@@ -353,7 +352,7 @@ class _RegisterViewState extends State<RegisterView> {
                               ),
                               child: Center(
                                 child: Text(
-                                  _fileName ?? 'No file chosen',
+                                  _imagePath ?? 'No file chosen',
                                   style: const TextStyle(fontSize: 16),
                                 ),
                               ),
@@ -430,24 +429,18 @@ class _RegisterViewState extends State<RegisterView> {
     );
   }
 
-/*
   Future<void> pickImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
-    if(image!=null) {
-      setState(() {
-        file = File(image.path);
-      });
-    }
-    */
-/*if (image != null) {
+
+    if (image != null) {
       setState(() {
         _imagePath = image.name;
       });
-    }*/ /*
-
+    }
   }
-*/
+
+/*
   Future<void> _chooseFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
 
@@ -457,4 +450,5 @@ class _RegisterViewState extends State<RegisterView> {
       });
     }
   }
+*/
 }
