@@ -62,7 +62,7 @@ class _DocDataForm3State extends State<DocDataForm3> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: 100.w,
+              width: 120.w,
               height: 40.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -79,7 +79,7 @@ class _DocDataForm3State extends State<DocDataForm3> {
               ),
             ),
             SizedBox(
-              width: 100.w,
+              width: 120.w,
               height: 40.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

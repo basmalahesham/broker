@@ -55,7 +55,7 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: 100.w,
+              width: 120.w,
               height: 40.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -72,7 +72,7 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
               ),
             ),
             SizedBox(
-              width: 100.w,
+              width: 120.w,
               height: 40.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

@@ -106,7 +106,7 @@ class _DocDataFormState extends State<DocDataForm> {
           ),
           SizedBox(height: 20.h),
           SizedBox(
-            width: 290.w,
+            width: 300.w,
             height: 40.h,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
