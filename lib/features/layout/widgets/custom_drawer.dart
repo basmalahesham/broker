@@ -6,10 +6,17 @@ import 'package:broker/features/layout/widgets/custom_text_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
   const CustomDrawer({
     super.key,
   });
+
+  @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  final GlobalKey _menuKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -95,8 +102,11 @@ class CustomDrawer extends StatelessWidget {
             Row(
               children: [
                 CustomTextButtonWidget(
+                  key: _menuKey,
                   text: 'خدماتنا',
-                  onPressed: () {},
+                  onPressed: () {
+                    showMenuFun(context);
+                  },
                 ),
                 const Icon(Icons.arrow_drop_down),
               ],
@@ -133,11 +143,70 @@ class CustomDrawer extends StatelessWidget {
       ),
     );
   }
+
   void showCustomBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      builder: (context) => CustomBottomMenuSheet(),
+      builder: (context) => const CustomBottomMenuSheet(),
     );
   }
 
+  void showMenuFun(BuildContext context) {
+    final RenderBox button =
+        _menuKey.currentContext!.findRenderObject() as RenderBox;
+    final RenderBox overlay =
+        Overlay.of(context).context.findRenderObject() as RenderBox;
+
+    final Offset buttonPosition = button.localToGlobal(Offset.zero);
+    final Size buttonSize = button.size;
+    showMenu(
+      color: Colors.white,
+      context: context,
+      position: RelativeRect.fromLTRB(
+        buttonPosition.dx,
+        buttonPosition.dy +
+            buttonSize.height, // Adjust Y position to be below the button
+        overlay.size.width - buttonPosition.dx,
+        overlay.size.height - buttonPosition.dy,
+      ),
+      items: [
+        PopupMenuItem<int>(
+          onTap: () {},
+          value: 0,
+          child: const Text(
+            'متوسط الاسعار',
+          ),
+        ),
+        PopupMenuItem<int>(
+          onTap: () {},
+          value: 1,
+          child: const Text(
+            'البورصة العقارية',
+          ),
+        ),
+        PopupMenuItem<int>(
+          onTap: () {},
+          value: 1,
+          child: const Text(
+            'اخر الاخبار',
+          ),
+        ),
+        PopupMenuItem<int>(
+          onTap: () {},
+          value: 1,
+          child: const Text(
+            'دليل المستخدم',
+          ),
+        ),
+        PopupMenuItem<int>(
+          onTap: () {},
+          value: 1,
+          child: const Text(
+            'الاشتراك فى النشرة الاخبارية',
+          ),
+        ),
+
+      ],
+    );
+  }
 }
