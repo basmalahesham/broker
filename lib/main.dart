@@ -8,6 +8,7 @@ import 'package:broker/features/home/presentation/views/talab_aqar_view.dart';
 import 'package:broker/features/home/presentation/views/talab_documented_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/layout/views/call_us_view.dart';
+import 'package:broker/features/layout/views/personnel_services_view.dart';
 import 'package:broker/features/messages/presentation/views/archive_view.dart';
 import 'package:broker/features/messages/presentation/views/chat_view.dart';
 import 'package:broker/features/splash/presentation/views/splash_view1.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         OTPView.routeName: (context) => const OTPView(),
         RegisterView.routeName: (context) => const RegisterView(),
         CallUsView.routeName: (context) => const CallUsView(),
+        PersonnelServicesView.routeName: (context) => const PersonnelServicesView(),
       },
     );
   }
