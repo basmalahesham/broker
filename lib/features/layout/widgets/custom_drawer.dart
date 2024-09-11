@@ -2,6 +2,7 @@ import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_bottom_menu_sheet.dart';
 import 'package:broker/features/layout/home_layout.dart';
+import 'package:broker/features/layout/views/call_us_view.dart';
 import 'package:broker/features/layout/widgets/custom_text_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -113,7 +114,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ),
             CustomTextButtonWidget(
               text: 'تواصل معنا',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, CallUsView.routeName);
+              },
             ),
             Align(
               alignment: Alignment.topRight,
@@ -205,7 +208,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
             'الاشتراك فى النشرة الاخبارية',
           ),
         ),
-
       ],
     );
   }
