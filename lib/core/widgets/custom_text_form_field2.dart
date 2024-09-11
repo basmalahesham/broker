@@ -1,12 +1,14 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField2 extends StatelessWidget {
   const CustomTextFormField2({
     super.key,
     required this.hintText,
-    required this.validator,
-    this.obscureText = false, this.controller,
+    this.validator,
+    this.obscureText = false,
+    this.controller,
   });
 
   final String hintText;
@@ -20,6 +22,9 @@ class CustomTextFormField2 extends StatelessWidget {
       validator: validator,
       obscureText: obscureText,
       decoration: InputDecoration(
+        constraints: BoxConstraints(
+          maxHeight: 40.h,
+        ),
         hintText: hintText,
         hintStyle: Styles.textStyle14.copyWith(
           fontWeight: FontWeight.normal,
