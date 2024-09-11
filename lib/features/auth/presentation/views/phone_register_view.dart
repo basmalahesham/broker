@@ -70,6 +70,7 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
                         height: 10.h,
                       ),
                       CustomTextFormField2(
+                        keyboardType: TextInputType.number,
                         controller: phoneController,
                         hintText: '0512345678',
                         validator: (value) {

@@ -105,7 +105,7 @@ class _DataFormState extends State<DataForm> {
           ),
           Center(
             child: SizedBox(
-              width: 280.w,
+              width: 300.w,
               height: 40.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
