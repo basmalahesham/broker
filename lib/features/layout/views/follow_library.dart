@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,25 +50,14 @@ class _FollowLibraryState extends State<FollowLibrary> {
             child: SizedBox(
               width: 300.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
+              child: CustomElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     showSnackBar(context);
                   }
-
-                }, // Call the onNext function
-                child: Text(
-                  'اطلع على المكتبة',
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
+                },
+                text: 'اطلع على المكتبة',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
           ),
@@ -88,10 +78,13 @@ class _FollowLibraryState extends State<FollowLibrary> {
       ),
     );
   }
+
   void showSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
         backgroundColor: Colors.white,
         content: Column(
           children: [
@@ -109,27 +102,15 @@ class _FollowLibraryState extends State<FollowLibrary> {
                 color: kSecondaryColor,
               ),
             ),
-
             const SizedBox(
               height: 20,
             ),
             SizedBox(
               width: 150.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kSecondaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: () {}, // Call the onPrevious function
-                child: Text(
-                  'طلب عرض عقار',
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
+              child: CustomElevatedButton(
+                onPressed: () {},
+                text: 'طلب عرض عقار',
               ),
             ),
             const SizedBox(
@@ -140,5 +121,4 @@ class _FollowLibraryState extends State<FollowLibrary> {
       ),
     );
   }
-
 }

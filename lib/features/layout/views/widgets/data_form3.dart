@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
@@ -19,17 +20,14 @@ class _DataForm3State extends State<DataForm3> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-
       children: [
         Text(
           'ارفاق عقد ملكية العقار',
           style: Styles.textStyle16.copyWith(
             color: const Color(0xFF332620).withOpacity(0.7),
           ),
-
         ),
         SizedBox(height: 10.h),
-
         Row(
           children: [
             InkWell(
@@ -73,50 +71,33 @@ class _DataForm3State extends State<DataForm3> {
           ],
         ),
         SizedBox(height: 20.h),
-
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onPrevious, // Call the onPrevious function
-                child: Text(
-                  'السابق',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onPrevious,
+                text: 'السابق',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onNext, // Call the onNext function
-                child: Text(
-                  'التالي',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onNext,
+                text: 'التالي',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
           ],
         ),
-
       ],
     );
   }
+
   Future<void> pickImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
@@ -127,5 +108,4 @@ class _DataForm3State extends State<DataForm3> {
       });
     }
   }
-
 }

@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_bottom_sheet.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,23 +34,11 @@ class FavouriteView extends StatelessWidget {
               ),
               SizedBox(
                 height: 40.h,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kSecondaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      side: const BorderSide(color: Colors.red),
-                    ),
-                  ),
+                child: CustomElevatedButton(
                   onPressed: () {
                     showCustomBottomSheet(context);
                   },
-                  child: Text(
-                    'أضف طلبك',
-                    style: Styles.textStyle14.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
+                  text: 'أضف طلبك',
                 ),
               ),
             ],
@@ -58,11 +47,11 @@ class FavouriteView extends StatelessWidget {
       ),
     );
   }
+
   void showCustomBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (context) => const CustomBottomSheet(),
     );
   }
-
 }

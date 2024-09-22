@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_bottom_menu_sheet.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -110,20 +111,13 @@ class _CustomBottomLoginSheetState extends State<CustomBottomLoginSheet> {
               SizedBox(
                 width: 130.w,
                 height: 40.h,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF332620),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                child: CustomElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {}
-                  }, // Call the onPrevious function
-                  child: Text(
-                    'تسجيل دخول',
-                    style: Styles.textStyle14.copyWith(color: Colors.white),
-                  ),
+                  },
+                  text: 'تسجيل دخول',
+                  borderRadius: 10,
+                  backgroundColor: const Color(0xFF332620),
                 ),
               ),
               SizedBox(
@@ -143,16 +137,10 @@ class _CustomBottomLoginSheetState extends State<CustomBottomLoginSheet> {
                 child: SizedBox(
                   width: 290.w,
                   height: 40.h,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kSecondaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
+                  child: CustomElevatedButton(
                     onPressed: () {
                       showCustomBottomSheet(context);
-                    }, // Call the onNext function
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

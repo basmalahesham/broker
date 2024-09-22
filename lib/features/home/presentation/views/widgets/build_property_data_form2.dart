@@ -1,10 +1,12 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildPropertyDataForm2 extends StatefulWidget {
-  const BuildPropertyDataForm2({super.key, required this.onNext, required this.onPrevious});
+  const BuildPropertyDataForm2(
+      {super.key, required this.onNext, required this.onPrevious});
 
   final VoidCallback onNext;
   final VoidCallback onPrevious;
@@ -55,35 +57,19 @@ class _BuildPropertyDataForm2State extends State<BuildPropertyDataForm2> {
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onPrevious, // Call the onPrevious function
-                child: Text(
-                  'السابق',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onPrevious,
+                text: 'السابق',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onNext, // Call the onNext function
-                child: Text(
-                  'التالي',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onNext,
+                text: 'التالي',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
           ],

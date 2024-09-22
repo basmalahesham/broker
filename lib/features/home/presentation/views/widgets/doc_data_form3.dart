@@ -1,10 +1,12 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class DocDataForm3 extends StatefulWidget {
-  const DocDataForm3({super.key, required this.onNext, required this.onPrevious});
+  const DocDataForm3(
+      {super.key, required this.onNext, required this.onPrevious});
 
   final VoidCallback onNext;
   final VoidCallback onPrevious;
@@ -53,46 +55,28 @@ class _DocDataForm3State extends State<DocDataForm3> {
           onTap: () {
             selectTime();
           },
-          text:
-          '${selectedTime.hour}:${selectedTime.minute}',
+          text: '${selectedTime.hour}:${selectedTime.minute}',
         ),
         SizedBox(height: 20.h),
-
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onPrevious, // Call the onPrevious function
-                child: Text(
-                  'السابق',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onPrevious,
+                text: 'السابق',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onNext, // Call the onNext function
-                child: Text(
-                  'التالي',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onNext,
+                text: 'التالي',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
           ],
@@ -100,6 +84,7 @@ class _DocDataForm3State extends State<DocDataForm3> {
       ],
     );
   }
+
   selectDateTime() async {
     var currentDate = await showDatePicker(
       context: context,
@@ -132,6 +117,7 @@ class _DocDataForm3State extends State<DocDataForm3> {
     }
   }
 }
+
 class CustomInkwellDate extends StatelessWidget {
   const CustomInkwellDate({
     super.key,

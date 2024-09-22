@@ -1,5 +1,6 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/widgets/custom_row_check.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -106,8 +107,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-             CustomRowCheck(text: 'مؤنثة'),
-             CustomRowCheck(text: 'غير مؤنثة'),
+            CustomRowCheck(text: 'مؤنثة'),
+            CustomRowCheck(text: 'غير مؤنثة'),
           ],
         ),
         SizedBox(height: 10.h),
@@ -161,8 +162,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-             CustomRowCheck(text: 'نعم'),
-             CustomRowCheck(text: 'لا'),
+            CustomRowCheck(text: 'نعم'),
+            CustomRowCheck(text: 'لا'),
           ],
         ),
         SizedBox(
@@ -218,8 +219,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-             CustomRowCheck(text: 'مهتم'),
-             CustomRowCheck(text: 'غير مهتم'),
+            CustomRowCheck(text: 'مهتم'),
+            CustomRowCheck(text: 'غير مهتم'),
           ],
         ),
         SizedBox(
@@ -239,8 +240,8 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
         ),
         Row(
           children: [
-             CustomRowCheck(text: 'مدحلين'),
-             CustomRowCheck(text: 'مدخل خاص'),
+            CustomRowCheck(text: 'مدحلين'),
+            CustomRowCheck(text: 'مدخل خاص'),
           ],
         ),
         SizedBox(height: 20.h),
@@ -250,35 +251,19 @@ class _BuildPropertyDataForm3State extends State<BuildPropertyDataForm3> {
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onPrevious, // Call the onPrevious function
-                child: Text(
-                  'السابق',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onPrevious,
+                text: 'السابق',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
             SizedBox(
               width: 120.w,
               height: 40.h,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF332620),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                onPressed: widget.onNext, // Call the onNext function
-                child: Text(
-                  'التالي',
-                  style: Styles.textStyle14.copyWith(color: Colors.white),
-                ),
+              child: CustomElevatedButton(
+                onPressed: widget.onNext,
+                text: 'التالي',
+                backgroundColor: const Color(0xFF332620),
               ),
             ),
           ],

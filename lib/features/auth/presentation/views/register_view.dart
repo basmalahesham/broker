@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
@@ -367,13 +368,7 @@ class _RegisterViewState extends State<RegisterView> {
                         child: SizedBox(
                           width: 280.w,
                           height: 40.h,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFBF554B),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
+                          child: CustomElevatedButton(
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
                                 Navigator.pushReplacementNamed(
@@ -381,13 +376,9 @@ class _RegisterViewState extends State<RegisterView> {
                                   HomeLayout.routeName,
                                 );
                               }
-                            }, // Call the onNext function
-                            child: Text(
-                              'تسجيل',
-                              style: Styles.textStyle14.copyWith(
-                                color: Colors.white,
-                              ),
-                            ),
+                            },
+                            text: 'تسجيل',
+                            backgroundColor: const Color(0xFFBF554B),
                           ),
                         ),
                       ),

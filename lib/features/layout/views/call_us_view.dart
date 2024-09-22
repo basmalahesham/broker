@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:flutter/material.dart';
@@ -72,8 +73,9 @@ class _CallUsViewState extends State<CallUsView> {
                             color: const Color(0xFF332620).withOpacity(0.7),
                           ),
                         ),
-                        SizedBox(height: 5.h,),
-
+                        SizedBox(
+                          height: 5.h,
+                        ),
                         CustomTextFormField2(
                           controller: nameController,
                           hintText: 'اكتب اسمك بالكامل',
@@ -87,16 +89,18 @@ class _CallUsViewState extends State<CallUsView> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 10.h,),
-
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Text(
                           'البريد الالكتروني',
                           style: Styles.textStyle16.copyWith(
                             color: const Color(0xFF332620).withOpacity(0.7),
                           ),
                         ),
-                        SizedBox(height: 5.h,),
-
+                        SizedBox(
+                          height: 5.h,
+                        ),
                         CustomTextFormField2(
                           controller: emailController,
                           hintText: 'ادخل بريدك الالكتروني',
@@ -112,16 +116,18 @@ class _CallUsViewState extends State<CallUsView> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 10.h,),
-
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Text(
                           'رقم الهاتف',
                           style: Styles.textStyle16.copyWith(
                             color: const Color(0xFF332620).withOpacity(0.7),
                           ),
                         ),
-                        SizedBox(height: 5.h,),
-
+                        SizedBox(
+                          height: 5.h,
+                        ),
                         CustomTextFormField2(
                           controller: phoneController,
                           hintText: 'ادخل رقم الهاتف',
@@ -138,27 +144,31 @@ class _CallUsViewState extends State<CallUsView> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 10.h,),
-
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Text(
                           'نوع الدعم',
                           style: Styles.textStyle16.copyWith(
                             color: const Color(0xFF332620).withOpacity(0.7),
                           ),
                         ),
-                        SizedBox(height: 5.h,),
-
+                        SizedBox(
+                          height: 5.h,
+                        ),
                         CustomDropDownButton(items: list1),
-                        SizedBox(height: 10.h,),
-
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Text(
                           'الرسالة',
                           style: Styles.textStyle16.copyWith(
                             color: const Color(0xFF332620).withOpacity(0.7),
                           ),
                         ),
-                        SizedBox(height: 5.h,),
-
+                        SizedBox(
+                          height: 5.h,
+                        ),
                         TextFormField(
                           maxLines: 3,
                           keyboardType: TextInputType.number,
@@ -186,32 +196,21 @@ class _CallUsViewState extends State<CallUsView> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10.h,),
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Center(
                           child: SizedBox(
                             width: 280.w,
                             height: 40.h,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: kSecondaryColor,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                              ),
+                            child: CustomElevatedButton(
                               onPressed: () {
-                                if (formKey.currentState!.validate()) {
-                                }
-                              }, // Call the onNext function
-                              child: Text(
-                                'ارسال',
-                                style: Styles.textStyle14.copyWith(
-                                  color: Colors.white,
-                                ),
-                              ),
+                                if (formKey.currentState!.validate()) {}
+                              },
+                              text: 'ارسال',
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   ),

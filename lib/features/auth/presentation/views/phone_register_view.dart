@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/features/auth/presentation/views/otp_view.dart';
 import 'package:flutter/material.dart';
@@ -92,13 +93,7 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
                       SizedBox(
                         width: 100.w,
                         height: 40.h,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFBF554B),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
+                        child: CustomElevatedButton(
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
                               Navigator.pushReplacementNamed(
@@ -109,12 +104,8 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
                               showSnackBar(context);
                             }
                           },
-                          child: Text(
-                            'التالي',
-                            style: Styles.textStyle14.copyWith(
-                              color: Colors.white,
-                            ),
-                          ),
+                          text: 'التالي',
+                          backgroundColor: const Color(0xFFBF554B),
                         ),
                       ),
                     ],
@@ -154,7 +145,6 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
                     color: Colors.white,
                   ),
                 ),
-
               ],
             ),
             SizedBox(

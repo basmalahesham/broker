@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/widgets/custom_row_check.dart';
 import 'package:broker/core/widgets/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -377,20 +378,9 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                       SizedBox(
                         width: 311.w,
                         height: 30.h,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: kSecondaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                              side: const BorderSide(color: Colors.red),
-                            ),
-                          ),
+                        child: CustomElevatedButton(
                           onPressed: () {},
-                          child: Text(
-                            'طلب',
-                            style: Styles.textStyle14
-                                .copyWith(color: Colors.white),
-                          ),
+                          text: 'طلب',
                         ),
                       ),
                     ],

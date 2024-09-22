@@ -26,7 +26,7 @@ class CustomListViewSpecialAqar extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
                 border: Border.all(
-                  color: Color(0xFFAFAFAF),
+                  color: const Color(0xFFAFAFAF),
                 ),
               ),
               child: Column(

@@ -1,4 +1,5 @@
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/core/widgets/custom_text_form_field2.dart';
 import 'package:broker/core/widgets/widgets/custom_row_check.dart';
 import 'package:broker/features/auth/presentation/views/phone_register_view.dart';
@@ -28,7 +29,6 @@ class _LoginViewState extends State<LoginView> {
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,
-
             child: Center(
               child: Form(
                 key: formKey,
@@ -49,7 +49,6 @@ class _LoginViewState extends State<LoginView> {
                         'تسجيل الدخول',
                         style: Styles.textStyle24.copyWith(
                           fontWeight: FontWeight.normal,
-
                           color: const Color(0xFF332620),
                         ),
                       ),
@@ -98,13 +97,7 @@ class _LoginViewState extends State<LoginView> {
                           SizedBox(
                             width: 260.w,
                             height: 40.h,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFFBF554B),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                              ),
+                            child: CustomElevatedButton(
                               onPressed: () {
                                 if (formKey.currentState!.validate()) {
                                   Navigator.pushReplacementNamed(
@@ -115,38 +108,24 @@ class _LoginViewState extends State<LoginView> {
                                     const SnackBar(content: Text('Success')),
                                   );
                                 }
-                              }, // Call the onNext function
-                              child: Text(
-                                'تسجيل دخول',
-                                style: Styles.textStyle14.copyWith(
-                                  color: Colors.white,
-                                ),
-                              ),
+                              },
+                              text: 'تسجيل دخول',
+                              backgroundColor: const Color(0xFFBF554B),
                             ),
                           ),
                           Center(
                             child: SizedBox(
                               width: 290.w,
                               height: 40.h,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFF1A4B42),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                ),
+                              child: CustomElevatedButton(
                                 onPressed: () {
                                   Navigator.pushReplacementNamed(
                                     context,
                                     PhoneRegisterView.routeName,
                                   );
-                                }, // Call the onNext function
-                                child: Text(
-                                  'انشاء حساب',
-                                  style: Styles.textStyle14.copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                },
+                                text: 'انشاء حساب',
+                                backgroundColor: const Color(0xFF1A4B42),
                               ),
                             ),
                           ),

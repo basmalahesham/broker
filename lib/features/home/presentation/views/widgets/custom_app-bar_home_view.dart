@@ -43,5 +43,4 @@ class CustomAppBarHomeView extends StatelessWidget {
       ),
     );
   }
-
 }

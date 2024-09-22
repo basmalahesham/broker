@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_bottom_menu_sheet.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:broker/features/layout/views/call_us_view.dart';
 import 'package:broker/features/layout/views/personnel_services_view.dart';
@@ -100,8 +101,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             CustomTextButtonWidget(
               text: 'خدمات الملاك',
               onPressed: () {
-                Navigator.pushReplacementNamed(context, PersonnelServicesView.routeName);
-
+                Navigator.pushReplacementNamed(
+                    context, PersonnelServicesView.routeName);
               },
             ),
             Row(
@@ -126,22 +127,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
               alignment: Alignment.topRight,
               child: SizedBox(
                 height: 40.h,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF332620),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
+                child: CustomElevatedButton(
                   onPressed: () {
                     showCustomBottomSheet(context);
                   },
-                  child: Text(
-                    'انضم إلينا',
-                    style: Styles.textStyle14.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
+                  text: 'انضم إلينا',
+                  backgroundColor: const Color(0xFF332620),
                 ),
               ),
             ),

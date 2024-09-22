@@ -1,5 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:broker/features/auth/presentation/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,8 +61,8 @@ class _OTPViewState extends State<OTPView> {
                         ),
                       ),
                       Pinput(
-                        validator: (pinController){
-                          if (pinController==null||pinController.isEmpty) {
+                        validator: (pinController) {
+                          if (pinController == null || pinController.isEmpty) {
                             return 'enter a value';
                           }
                           return null;
@@ -86,18 +87,11 @@ class _OTPViewState extends State<OTPView> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-
                       ),
                       SizedBox(
                         width: 130.w,
                         height: 40.h,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: kSecondaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                          ),
+                        child: CustomElevatedButton(
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
                               Navigator.pushReplacementNamed(
@@ -106,31 +100,17 @@ class _OTPViewState extends State<OTPView> {
                               );
                             }
                           },
-                          child: Text(
-                            'تأكيد',
-                            style: Styles.textStyle14.copyWith(
-                              color: Colors.white,
-                            ),
-                          ),
+                          text: 'تأكيد',
+                          borderRadius: 25,
                         ),
                       ),
                       SizedBox(
                         width: 130.w,
                         height: 40.h,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: kSecondaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                          ),
+                        child: CustomElevatedButton(
                           onPressed: () {},
-                          child: Text(
-                            'اعادة الارسال',
-                            style: Styles.textStyle14.copyWith(
-                              color: Colors.white,
-                            ),
-                          ),
+                          text: 'اعادة الارسال',
+                          borderRadius: 25,
                         ),
                       ),
                     ],

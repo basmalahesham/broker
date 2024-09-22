@@ -18,7 +18,7 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
-  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
 
 
   @override
@@ -127,7 +127,7 @@ class TabNavigationItem {
       page: const OrdersView(),
     ),
     TabNavigationItem(
-      page:  MessageView(),
+      page:  const MessageView(),
     ),
   ];
 }
