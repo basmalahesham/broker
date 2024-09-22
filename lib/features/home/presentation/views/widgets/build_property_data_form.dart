@@ -1,7 +1,7 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/widgets/custom_text_form_field.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -81,7 +81,20 @@ class _BuildPropertyDataFormState extends State<BuildPropertyDataForm> {
                     ),
                   ),
                   SizedBox(height: 8.h),
-                  const CustomTextFormField(text: ''),
+                  SizedBox(
+                    width: 110.w,
+                    height: 40.h,
+                    child: CustomTextFormField(
+                      hintText: '',
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'enter a value';
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(width: 20),
@@ -95,7 +108,20 @@ class _BuildPropertyDataFormState extends State<BuildPropertyDataForm> {
                     ),
                   ),
                   SizedBox(height: 8.h),
-                  const CustomTextFormField(text: ''),
+                  SizedBox(
+                    width: 110.w,
+                    height: 40.h,
+                    child: CustomTextFormField(
+                      hintText: '',
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'enter a value';
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
                 ],
               ),
             ],

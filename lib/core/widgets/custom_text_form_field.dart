@@ -2,8 +2,8 @@ import 'package:broker/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomTextFormField2 extends StatelessWidget {
-  const CustomTextFormField2({
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
     super.key,
     required this.hintText,
     this.validator,
@@ -20,6 +20,7 @@ class CustomTextFormField2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: keyboardType,
+      //inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       controller: controller,
       validator: validator,
       obscureText: obscureText,
@@ -30,26 +31,29 @@ class CustomTextFormField2 extends StatelessWidget {
         hintText: hintText,
         hintStyle: Styles.textStyle14.copyWith(
           fontWeight: FontWeight.normal,
-          color: Colors.grey,
+          color: const Color(0xFFAFAFAF),
         ),
         fillColor: const Color(0xFFFDFDFD),
         filled: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(9),
           borderSide: const BorderSide(
-            color: Colors.grey,
+            color: Color(0xFFAFAFAF),
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(9),
           borderSide: const BorderSide(
-            color: Colors.grey,
+            color: Color(0xFFAFAFAF),
           ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(9),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(9),
           borderSide: const BorderSide(
-            color: Colors.grey,
+            color: Color(0xFFAFAFAF),
           ),
         ),
       ),

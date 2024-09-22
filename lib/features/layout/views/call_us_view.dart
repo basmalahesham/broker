@@ -2,7 +2,7 @@ import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/custom_text_form_field2.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:broker/features/home/presentation/views/widgets/custom_app-bar_home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -76,7 +76,7 @@ class _CallUsViewState extends State<CallUsView> {
                         SizedBox(
                           height: 5.h,
                         ),
-                        CustomTextFormField2(
+                        CustomTextFormField(
                           controller: nameController,
                           hintText: 'اكتب اسمك بالكامل',
                           validator: (value) {
@@ -101,7 +101,7 @@ class _CallUsViewState extends State<CallUsView> {
                         SizedBox(
                           height: 5.h,
                         ),
-                        CustomTextFormField2(
+                        CustomTextFormField(
                           controller: emailController,
                           hintText: 'ادخل بريدك الالكتروني',
                           validator: (value) {
@@ -128,7 +128,7 @@ class _CallUsViewState extends State<CallUsView> {
                         SizedBox(
                           height: 5.h,
                         ),
-                        CustomTextFormField2(
+                        CustomTextFormField(
                           controller: phoneController,
                           hintText: 'ادخل رقم الهاتف',
                           validator: (value) {

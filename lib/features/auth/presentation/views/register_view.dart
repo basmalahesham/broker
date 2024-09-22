@@ -1,6 +1,6 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/custom_text_form_field2.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +82,7 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                           ),
                           Expanded(
-                            child: CustomTextFormField2(
+                            child: CustomTextFormField(
                               controller: nameController,
                               hintText: 'اكتب اسمك بالكامل',
                               validator: (value) {
@@ -122,7 +122,7 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                           ),
                           Expanded(
-                            child: CustomTextFormField2(
+                            child: CustomTextFormField(
                               controller: emailController,
                               hintText: 'ادخل بريدك الالكتروني',
                               validator: (value) {
@@ -164,7 +164,7 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                           ),
                           Expanded(
-                            child: CustomTextFormField2(
+                            child: CustomTextFormField(
                               controller: companyName,
                               hintText: 'ادخل اسم الشركة ان وجد',
                             ),
@@ -195,7 +195,7 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                           ),
                           Expanded(
-                            child: CustomTextFormField2(
+                            child: CustomTextFormField(
                               controller: passwordController,
                               hintText: '**********',
                               obscureText: true,
@@ -238,7 +238,7 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                           ),
                           Expanded(
-                            child: CustomTextFormField2(
+                            child: CustomTextFormField(
                               controller: confirmPasswordController,
                               hintText: '**********',
                               obscureText: true,
@@ -279,7 +279,7 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                           ),
                           Expanded(
-                            child: CustomTextFormField2(
+                            child: CustomTextFormField(
                               controller: phoneController,
                               hintText: 'ادخل رقم الهاتف',
                               validator: (value) {

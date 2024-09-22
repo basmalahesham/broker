@@ -2,8 +2,8 @@ import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:broker/core/widgets/widgets/custom_row_check.dart';
-import 'package:broker/core/widgets/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -136,7 +136,7 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10.h),
+                const SizedBox(height: 10),
                 Form(
                   key: _formKey,
                   child: Column(
@@ -150,8 +150,8 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list1,
@@ -166,14 +166,14 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list4,
                         filled: true,
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
                           Column(
@@ -186,8 +186,21 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                                       const Color(0xFF332620).withOpacity(0.7),
                                 ),
                               ),
-                              SizedBox(height: 8.h),
-                              const CustomTextFormField(text: 'السعر الادنى'),
+                              const SizedBox(height: 8),
+                              SizedBox(
+                                width: 110.w,
+                                height: 40.h,
+                                child: CustomTextFormField(
+                                  hintText: 'السعر الادنى',
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'enter a value';
+                                    }
+                                    return null;
+                                  },
+                                  keyboardType: TextInputType.number,
+                                ),
+                              ),
                             ],
                           ),
                           const SizedBox(width: 20),
@@ -201,13 +214,26 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                                       const Color(0xFF332620).withOpacity(0.7),
                                 ),
                               ),
-                              SizedBox(height: 8.h),
-                              const CustomTextFormField(text: 'السعر الاعلى'),
+                              const SizedBox(height: 8),
+                              SizedBox(
+                                width: 110.w,
+                                height: 40.h,
+                                child: CustomTextFormField(
+                                  hintText: 'السعر الاعلى',
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'enter a value';
+                                    }
+                                    return null;
+                                  },
+                                  keyboardType: TextInputType.number,
+                                ),
+                              ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -217,16 +243,16 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       CustomDropDownButton(
                         items: list3,
                         filled: true,
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Image.asset('assets/images/Frame.png'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'درج داخلي'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -236,14 +262,14 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list5,
                         filled: true,
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -253,14 +279,14 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list5,
                         filled: true,
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -270,24 +296,24 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list5,
                         filled: true,
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'مدخل سيارة'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'غرفة سايق'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'غرفة خادمة'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'مسبح'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'مؤثث'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
                           Column(
@@ -300,8 +326,21 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                                       const Color(0xFF332620).withOpacity(0.7),
                                 ),
                               ),
-                              SizedBox(height: 8.h),
-                              const CustomTextFormField(text: 'ادنى مساحة'),
+                              const SizedBox(height: 8),
+                              SizedBox(
+                                width: 110.w,
+                                height: 40.h,
+                                child: CustomTextFormField(
+                                  hintText: 'ادنى مساحة',
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'enter a value';
+                                    }
+                                    return null;
+                                  },
+                                  keyboardType: TextInputType.number,
+                                ),
+                              ),
                             ],
                           ),
                           const SizedBox(width: 20),
@@ -315,15 +354,26 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                                       const Color(0xFF332620).withOpacity(0.7),
                                 ),
                               ),
-                              SizedBox(height: 8.h),
-                              const CustomTextFormField(
-                                text: 'اعلى مساحة',
+                              const SizedBox(height: 8),
+                              SizedBox(
+                                width: 110.w,
+                                height: 40.h,
+                                child: CustomTextFormField(
+                                  hintText: 'اعلى مساحة',
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'enter a value';
+                                    }
+                                    return null;
+                                  },
+                                  keyboardType: TextInputType.number,
+                                ),
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -333,12 +383,12 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       CustomDropDownButton(
                         items: list6,
                         filled: true,
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -348,14 +398,14 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       CustomDropDownButton(
                         items: list7,
                         filled: true,
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'مطبخ'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -365,16 +415,16 @@ class _DrawerBodyTalabAqarState extends State<DrawerBodyTalabAqar> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       CustomDropDownButton(
                         items: list8,
                         filled: true,
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'قبو'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       const CustomRowCheck(text: 'الاعلانات المصورة فقط'),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       SizedBox(
                         width: 311.w,
                         height: 30.h,

@@ -1,7 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/custom_text_form_field2.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,7 +32,7 @@ class _FollowLibraryState extends State<FollowLibrary> {
           SizedBox(
             height: 10.h,
           ),
-          CustomTextFormField2(
+          CustomTextFormField(
             keyboardType: TextInputType.number,
             controller: libNum,
             hintText: 'رجاء قم بكتابة رقم المكتبة',

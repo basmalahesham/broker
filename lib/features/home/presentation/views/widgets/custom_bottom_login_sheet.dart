@@ -2,7 +2,7 @@ import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_bottom_menu_sheet.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/custom_text_form_field2.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -64,7 +64,7 @@ class _CustomBottomLoginSheetState extends State<CustomBottomLoginSheet> {
               SizedBox(
                 height: 5.h,
               ),
-              CustomTextFormField2(
+              CustomTextFormField(
                 hintText: 'ادخل بريدك الالكتروني',
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -91,7 +91,7 @@ class _CustomBottomLoginSheetState extends State<CustomBottomLoginSheet> {
               SizedBox(
                 height: 5.h,
               ),
-              CustomTextFormField2(
+              CustomTextFormField(
                 hintText: '**********',
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {

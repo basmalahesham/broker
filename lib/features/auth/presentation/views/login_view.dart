@@ -1,6 +1,6 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/custom_text_form_field2.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:broker/core/widgets/widgets/custom_row_check.dart';
 import 'package:broker/features/auth/presentation/views/phone_register_view.dart';
 import 'package:broker/features/layout/home_layout.dart';
@@ -52,7 +52,7 @@ class _LoginViewState extends State<LoginView> {
                           color: const Color(0xFF332620),
                         ),
                       ),
-                      CustomTextFormField2(
+                      CustomTextFormField(
                         controller: emailController,
                         hintText: 'ادخل بريدك الالكتروني',
                         validator: (value) {
@@ -67,7 +67,7 @@ class _LoginViewState extends State<LoginView> {
                           return null;
                         },
                       ),
-                      CustomTextFormField2(
+                      CustomTextFormField(
                         controller: passwordController,
                         hintText: '**********',
                         obscureText: true,

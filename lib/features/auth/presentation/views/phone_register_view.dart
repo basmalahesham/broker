@@ -1,6 +1,6 @@
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
-import 'package:broker/core/widgets/custom_text_form_field2.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:broker/features/auth/presentation/views/otp_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -70,7 +70,7 @@ class _PhoneRegisterViewState extends State<PhoneRegisterView> {
                       SizedBox(
                         height: 10.h,
                       ),
-                      CustomTextFormField2(
+                      CustomTextFormField(
                         keyboardType: TextInputType.number,
                         controller: phoneController,
                         hintText: '0512345678',
