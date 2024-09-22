@@ -32,7 +32,7 @@ class CustomInkwellContainer extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: Color(0xFF332620),
+              color: const Color(0xFF332620),
               size: 28,
             ),
             Text(
