@@ -8,18 +8,25 @@ import 'package:broker/features/orders/presentation/views/orders_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeLayout extends StatefulWidget {
-  HomeLayout({super.key,required this.selectedIndex});
+  const HomeLayout({super.key, required this.selectedIndex});
 
   static const String routeName = "home_view";
-  int selectedIndex = 0;
+  final int selectedIndex;
 
   @override
   State<HomeLayout> createState() => _HomeLayoutState();
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
+  late int _currentIndex;
+
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
 
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.selectedIndex;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +34,13 @@ class _HomeLayoutState extends State<HomeLayout> {
       key: _drawerKey,
       drawer: const CustomDrawer(),
       body: IndexedStack(
-        index: widget.selectedIndex,
+        index: _currentIndex,
         children: [
           for (final tabItem in TabNavigationItem.items) tabItem.page,
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: widget.selectedIndex,
+        currentIndex: _currentIndex,
         onTap: (index) {
           if (index == 2) {
             showCustomBottomSheet();
@@ -41,7 +48,7 @@ class _HomeLayoutState extends State<HomeLayout> {
             _drawerKey.currentState?.openDrawer();
           } else {
             setState(() {
-              widget.selectedIndex = index;
+              _currentIndex = index;
             });
           }
         },
@@ -95,39 +102,28 @@ class _HomeLayoutState extends State<HomeLayout> {
   }
 }
 
-/*
-List<Widget> screenWidgets = [
-  const HomeView(),
-  const MapView(),
-  Container(),
-  const OrdersView(),
-  const MessageView(),
-];
-*/
 class TabNavigationItem {
   final Widget page;
 
-
   TabNavigationItem({
     required this.page,
-
   });
 
   static List<TabNavigationItem> get items => [
-    TabNavigationItem(
-      page: const HomeView(),
-    ),
-    TabNavigationItem(
-      page: const MapView(),
-    ),
-    TabNavigationItem(
-      page:  Container(),
-    ),
-    TabNavigationItem(
-      page: const OrdersView(),
-    ),
-    TabNavigationItem(
-      page:  const MessageView(),
-    ),
-  ];
+        TabNavigationItem(
+          page: const HomeView(),
+        ),
+        TabNavigationItem(
+          page: const MapView(),
+        ),
+        TabNavigationItem(
+          page: Container(), // Consider implementing functionality here
+        ),
+        TabNavigationItem(
+          page: const OrdersView(),
+        ),
+        TabNavigationItem(
+          page: const MessageView(),
+        ),
+      ];
 }
