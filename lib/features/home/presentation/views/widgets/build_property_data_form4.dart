@@ -1,6 +1,7 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
 import 'package:broker/core/widgets/widgets/custom_row_check.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,26 +31,11 @@ class _BuildPropertyDataForm4State extends State<BuildPropertyDataForm4> {
           ),
         ),
         SizedBox(height: 8.h),
-        TextFormField(
+        CustomTextFormField(
+          hintText: 'يمكنك هنا وصف طلبك بالتفصيل',
           maxLines: 3,
           keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            hintText: 'يمكنك هنا وصف طلبك بالتفصيل',
-            fillColor: Colors.white,
-            filled: true,
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(9),
-              borderSide: const BorderSide(color: Color(0xFFAFAFAF)),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(9),
-              borderSide: const BorderSide(color: Color(0xFFAFAFAF)),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(9),
-              borderSide: const BorderSide(color: Color(0xFFAFAFAF)),
-            ),
-          ),
+          maxHeight: double.infinity,
         ),
         SizedBox(height: 10.h),
         CustomRowCheck(

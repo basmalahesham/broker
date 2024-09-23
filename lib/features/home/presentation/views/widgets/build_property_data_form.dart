@@ -137,25 +137,10 @@ class _BuildPropertyDataFormState extends State<BuildPropertyDataForm> {
             ),
           ),
           SizedBox(height: 8.h),
-          TextFormField(
+          const CustomTextFormField(
+            hintText: '200',
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              hintText: '200',
-              fillColor: Colors.white,
-              filled: true,
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(9),
-                borderSide: const BorderSide(color: Color(0xFFAFAFAF)),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(9),
-                borderSide: const BorderSide(color: Color(0xFFAFAFAF)),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(9),
-                borderSide: const BorderSide(color: Color(0xFFAFAFAF)),
-              ),
-            ),
+            maxHeight: 50,
           ),
           SizedBox(height: 20.h),
           SizedBox(

@@ -8,7 +8,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.validator,
     this.obscureText = false,
-    this.controller, this.keyboardType,
+    this.controller, this.keyboardType, this.maxLines, this.maxHeight,
   });
 
   final String hintText;
@@ -16,9 +16,12 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
+  final int? maxLines;
+  final double? maxHeight;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines??1,
       keyboardType: keyboardType,
       //inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       controller: controller,
@@ -26,7 +29,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         constraints: BoxConstraints(
-          maxHeight: 40.h,
+          maxHeight: maxHeight??40.h,
         ),
         hintText: hintText,
         hintStyle: Styles.textStyle14.copyWith(

@@ -69,6 +69,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       CustomTextFormField(
                         controller: passwordController,
+                        maxHeight: 50,
                         hintText: '**********',
                         obscureText: true,
                         validator: (value) {
