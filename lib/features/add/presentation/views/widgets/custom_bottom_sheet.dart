@@ -1,31 +1,28 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
+import 'package:broker/features/add/presentation/views/talab_aqar_add_view.dart';
+import 'package:broker/features/add/presentation/views/talab_documented_add_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomBottomSheet extends StatefulWidget {
+class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({
     super.key,
   });
-
-  @override
-  State<CustomBottomSheet> createState() => _CustomBottomSheetState();
-}
-
-class _CustomBottomSheetState extends State<CustomBottomSheet> {
-  GlobalKey<ScaffoldState> drawerKey = GlobalKey();
-  int activeButtonIndex = 1; // 0 for طلب توثيق ,  for طلب عقار 1
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: drawerKey,
-      drawer: Drawer(
-        child: getDrawerBody(),
+    return Container(
+      width: 375.w,
+      height: 200.h,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(5),
+          topRight: Radius.circular(5),
+        ),
       ),
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -49,15 +46,11 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
             SizedBox(
               height: 20.h,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            Row(
               children: [
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      activeButtonIndex = 1;
-                    });
-                    drawerKey.currentState?.openDrawer();
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, TalabAqarAddView.routeName);
                   },
                   child: Container(
                     width: 150.w,
@@ -89,14 +82,12 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                   ),
                 ),
                 SizedBox(
-                  height: 20.w,
+                  width: 20.w,
                 ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      activeButtonIndex = 0;
-                    });
-                    drawerKey.currentState?.openDrawer();
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, TalabDocumentedAddView.routeName);
+
                   },
                   child: Container(
                     width: 150.w,
@@ -133,13 +124,5 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
         ),
       ),
     );
-  }
-
-  Widget getDrawerBody() {
-    if (activeButtonIndex == 0) {
-      return const Center(child: Text("Drawer Body for طلب توثيق"));
-    } else {
-      return const Center(child: Text("Drawer Body for طلب عقار"));
-    }
   }
 }

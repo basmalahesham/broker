@@ -1,4 +1,6 @@
 import 'package:broker/constants.dart';
+import 'package:broker/features/add/presentation/views/talab_aqar_add_view.dart';
+import 'package:broker/features/add/presentation/views/talab_documented_add_view.dart';
 import 'package:broker/features/auth/presentation/views/login_view.dart';
 import 'package:broker/features/auth/presentation/views/phone_register_view.dart';
 import 'package:broker/features/auth/presentation/views/otp_view.dart';
@@ -56,7 +58,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashView1.routeName: (context) => const SplashView1(),
         SplashView2.routeName: (context) => const SplashView2(),
-        HomeLayout.routeName: (context) => HomeLayout(selectedIndex: 0),
+        HomeLayout.routeName: (context) => const HomeLayout(selectedIndex: 0),
         ArchiveView.routeName: (context) => const ArchiveView(),
         ChatView.routeName: (context) => const ChatView(),
         MostInteractiveAdDetailsView.routeName: (context) =>
@@ -68,7 +70,11 @@ class MyApp extends StatelessWidget {
         OTPView.routeName: (context) => const OTPView(),
         RegisterView.routeName: (context) => const RegisterView(),
         CallUsView.routeName: (context) => const CallUsView(),
-        PersonnelServicesView.routeName: (context) => const PersonnelServicesView(),
+        PersonnelServicesView.routeName: (context) =>
+            const PersonnelServicesView(),
+        TalabAqarAddView.routeName: (context) => const TalabAqarAddView(),
+        TalabDocumentedAddView.routeName: (context) =>
+            const TalabDocumentedAddView(),
       },
     );
   }

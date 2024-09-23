@@ -1,6 +1,6 @@
 import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
-import 'package:broker/core/widgets/custom_bottom_sheet.dart';
+import 'package:broker/features/add/presentation/views/widgets/custom_bottom_sheet.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -2,6 +2,8 @@ import 'package:broker/constants.dart';
 import 'package:broker/core/utils/styles.dart';
 import 'package:broker/core/widgets/custom_drop_down_button.dart';
 import 'package:broker/core/widgets/custom_elevated_button.dart';
+import 'package:broker/core/widgets/custom_text_form_field.dart';
+import 'package:broker/core/widgets/widgets/custom_inkwell_date.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -73,7 +75,7 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10.h),
+                const SizedBox(height: 10),
                 Form(
                   key: _formKey,
                   child: Column(
@@ -87,8 +89,8 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list2,
@@ -103,8 +105,8 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
                       CustomDropDownButton(
                         items: list1,
@@ -119,36 +121,25 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8.h,
+                      const SizedBox(
+                        height: 8,
                       ),
-                      TextFormField(
+                       CustomTextFormField(
+                        hintText: '',
                         keyboardType: TextInputType.number,
-                        //inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(9),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFAFAFAF),
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(9),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFAFAFAF),
-                            ),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(9),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFAFAFAF),
-                            ),
-                          ),
-                        ),
+                        validator: (value) {
+                          if (value == null||value.isEmpty) {
+                            return 'enter a value';
+                          }
+                          final int? number = int.tryParse(value);
+                          if (number == null || number > 10) {
+                            return 'Value must be less than or equal to 10';
+                          }
+                          return null;
+                        },
+
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
                           Column(
@@ -161,7 +152,7 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                                       const Color(0xFF332620).withOpacity(0.7),
                                 ),
                               ),
-                              SizedBox(height: 8.h),
+                              const SizedBox(height: 8),
                               CustomInkwellDate(
                                 selectedDate: selectedDate,
                                 onTap: () {
@@ -182,7 +173,7 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                                       const Color(0xFF332620).withOpacity(0.7),
                                 ),
                               ),
-                              SizedBox(height: 8.h),
+                              const SizedBox(height: 8),
                               CustomInkwellDate(
                                 selectedDate: selectedDate,
                                 onTap: () {
@@ -195,7 +186,7 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
@@ -205,14 +196,14 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8.h),
+                      const SizedBox(height: 8),
                       CustomDropDownButton(
                         items: list3,
                         filled: true,
                       ),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       Image.asset('assets/images/Frame.png'),
-                      SizedBox(height: 10.h),
+                      const SizedBox(height: 10),
                       SizedBox(
                         width: 311.w,
                         height: 30.h,
@@ -262,51 +253,5 @@ class _DrawerBodyTalabDocumentedState extends State<DrawerBodyTalabDocumented> {
         selectedTime = picked;
       });
     }
-  }
-}
-
-class CustomInkwellDate extends StatelessWidget {
-  const CustomInkwellDate({
-    super.key,
-    required this.selectedDate,
-    required this.onTap,
-    required this.text,
-  });
-
-  final DateTime selectedDate;
-  final void Function() onTap;
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: 110.w,
-        // height: 60,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(9),
-          border: Border.all(
-            color: const Color(0xFFAFAFAF),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                text,
-                style: Styles.textStyle14.copyWith(
-                  fontWeight: FontWeight.normal,
-                  color: const Color(0xFF332620).withOpacity(0.7),
-                ),
-              ),
-              const Icon(Icons.keyboard_arrow_down_rounded),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }
